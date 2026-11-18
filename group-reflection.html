@@ -1,0 +1,829 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Group Reflection | Rethabile Menyatso</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+
+<style>
+:root {
+    --wine: #541D2B;
+    --wine-dark: #321019;
+    --ivory: #F3EBDD;
+    --paper: #FFFCF6;
+    --copper: #B87962;
+    --silver: #B9B7B4;
+    --ink: #202020;
+    --muted: #71676A;
+    --line: rgba(84, 29, 43, 0.17);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background: var(--ivory);
+    color: var(--ink);
+    font-family: 'DM Sans', sans-serif;
+    line-height: 1.75;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+.topbar {
+    background: var(--wine-dark);
+    color: var(--ivory);
+    padding: 17px 7%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.brand {
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+}
+
+.brand span {
+    color: var(--copper);
+}
+
+.topbar a.back {
+    font-size: 0.8rem;
+    color: #E6D8D2;
+    border-bottom: 1px solid var(--copper);
+    padding-bottom: 3px;
+}
+
+.hero {
+    background: var(--wine);
+    color: var(--ivory);
+    padding: 75px 8% 85px;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero::after {
+    content: "05";
+    position: absolute;
+    right: 5%;
+    bottom: -70px;
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(13rem, 28vw, 25rem);
+    color: rgba(243, 235, 221, 0.045);
+    line-height: 1;
+    pointer-events: none;
+}
+
+.eyebrow {
+    color: #D8A58E;
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    margin-bottom: 22px;
+}
+
+.hero h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2.8rem, 7vw, 6rem);
+    font-weight: 500;
+    line-height: 1.08;
+    max-width: 850px;
+    position: relative;
+    z-index: 1;
+}
+
+.hero h1 em {
+    color: #D8A58E;
+    font-weight: 500;
+}
+
+.hero-intro {
+    max-width: 650px;
+    color: #E8DCD8;
+    font-size: 1rem;
+    margin-top: 25px;
+}
+
+.hero-meta {
+    display: flex;
+    gap: 30px;
+    flex-wrap: wrap;
+    margin-top: 38px;
+    font-size: 0.72rem;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: #E0C9C2;
+}
+
+.hero-meta span {
+    border-left: 2px solid var(--copper);
+    padding-left: 12px;
+}
+
+main {
+    max-width: 1180px;
+    margin: auto;
+    padding: 65px 7% 90px;
+}
+
+.opening {
+    display: grid;
+    grid-template-columns: 0.7fr 1.5fr;
+    gap: 45px;
+    padding-bottom: 60px;
+    border-bottom: 1px solid var(--line);
+}
+
+.section-label {
+    color: var(--wine);
+    font-size: 0.7rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+}
+
+.opening h2,
+.closing h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(1.8rem, 3.5vw, 3rem);
+    line-height: 1.25;
+    font-weight: 500;
+    margin-top: 12px;
+}
+
+.opening p {
+    color: #51484A;
+    margin-bottom: 15px;
+}
+
+.opening strong {
+    color: var(--wine);
+}
+
+.journey-heading {
+    display: flex;
+    align-items: end;
+    justify-content: space-between;
+    gap: 25px;
+    margin: 65px 0 35px;
+    flex-wrap: wrap;
+}
+
+.journey-heading h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2rem, 4vw, 3.3rem);
+    font-weight: 500;
+    line-height: 1.2;
+    margin-top: 10px;
+}
+
+.journey-heading p {
+    max-width: 350px;
+    color: var(--muted);
+    font-size: 0.88rem;
+}
+
+.timeline {
+    position: relative;
+    padding-left: 36px;
+}
+
+.timeline::before {
+    content: "";
+    position: absolute;
+    left: 10px;
+    top: 20px;
+    bottom: 25px;
+    width: 1px;
+    background: var(--copper);
+}
+
+.stage {
+    position: relative;
+    margin-bottom: 26px;
+    background: var(--paper);
+    border: 1px solid var(--line);
+    padding: 30px 32px;
+    display: grid;
+    grid-template-columns: 115px 1fr;
+    gap: 28px;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.stage:hover {
+    transform: translateX(4px);
+    box-shadow: 0 12px 28px rgba(50, 16, 25, 0.07);
+}
+
+.stage::before {
+    content: "";
+    position: absolute;
+    left: -32px;
+    top: 38px;
+    width: 11px;
+    height: 11px;
+    background: var(--wine);
+    border: 3px solid var(--ivory);
+    outline: 1px solid var(--copper);
+    border-radius: 50%;
+}
+
+.stage-number {
+    color: var(--copper);
+    font-family: 'Playfair Display', serif;
+    font-size: 3rem;
+    line-height: 1;
+}
+
+.stage-tag {
+    display: inline-block;
+    color: var(--wine);
+    background: #F0E1DC;
+    padding: 4px 10px;
+    font-size: 0.65rem;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+}
+
+.stage h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.65rem;
+    font-weight: 500;
+    color: var(--wine-dark);
+    margin-bottom: 10px;
+}
+
+.stage p {
+    color: #51484A;
+    font-size: 0.91rem;
+    margin-bottom: 11px;
+}
+
+.stage p:last-child {
+    margin-bottom: 0;
+}
+
+.lesson {
+    padding-top: 12px;
+    border-top: 1px solid var(--line);
+    margin-top: 16px;
+}
+
+.lesson strong {
+    color: var(--wine);
+}
+
+.pullquote {
+    margin: 70px 0;
+    padding: 45px 7%;
+    background: var(--wine-dark);
+    color: var(--ivory);
+    text-align: center;
+    position: relative;
+}
+
+.pullquote .quote-mark {
+    color: var(--copper);
+    font-family: 'Playfair Display', serif;
+    font-size: 5rem;
+    line-height: 0.8;
+}
+
+.pullquote blockquote {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(1.5rem, 3vw, 2.6rem);
+    line-height: 1.4;
+    max-width: 800px;
+    margin: 15px auto 20px;
+}
+
+.pullquote p {
+    color: #D7BDB6;
+    font-size: 0.72rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+.learning-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
+    margin-top: 28px;
+}
+
+.learning-card {
+    border-top: 3px solid var(--copper);
+    background: rgba(255, 252, 246, 0.75);
+    padding: 25px 22px;
+}
+
+.learning-card .symbol {
+    font-family: 'Playfair Display', serif;
+    color: var(--copper);
+    font-size: 2rem;
+    margin-bottom: 10px;
+}
+
+.learning-card h3 {
+    color: var(--wine);
+    font-size: 1rem;
+    margin-bottom: 10px;
+}
+
+.learning-card p {
+    color: #62575A;
+    font-size: 0.85rem;
+}
+
+.closing {
+    margin-top: 75px;
+    padding: 45px;
+    border: 1px solid var(--copper);
+    background: var(--paper);
+}
+
+.closing h2 {
+    color: var(--wine);
+    margin-bottom: 20px;
+}
+
+.closing p {
+    color: #51484A;
+    margin-bottom: 15px;
+}
+
+.closing .signature {
+    margin-top: 28px;
+    color: var(--wine);
+    font-weight: 700;
+}
+
+.reflection-note {
+    margin-top: 28px;
+    padding: 18px 20px;
+    background: #EFE3D9;
+    border-left: 3px solid var(--copper);
+    font-size: 0.82rem;
+    color: #57464A;
+}
+
+.footer {
+    background: var(--wine-dark);
+    color: #D8C8C3;
+    padding: 28px 7%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 15px;
+    flex-wrap: wrap;
+    font-size: 0.75rem;
+}
+
+.footer strong {
+    color: var(--ivory);
+    letter-spacing: 1px;
+}
+
+.footer a {
+    color: #D8A58E;
+}
+
+@media (max-width: 700px) {
+    .hero {
+        padding: 55px 7% 65px;
+    }
+
+    main {
+        padding: 45px 6% 65px;
+    }
+
+    .opening {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .stage {
+        grid-template-columns: 1fr;
+        gap: 15px;
+        padding: 24px;
+    }
+
+    .stage-number {
+        font-size: 2.2rem;
+    }
+
+    .learning-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .closing {
+        padding: 28px 22px;
+    }
+
+    .hero-meta {
+        gap: 15px;
+    }
+}
+
+@media print {
+    .topbar a,
+    .footer a {
+        display: none;
+    }
+
+    body {
+        background: white;
+    }
+
+    .stage,
+    .learning-card,
+    .closing {
+        break-inside: avoid;
+    }
+
+    .hero,
+    .pullquote,
+    .footer {
+        print-color-adjust: exact;
+        -webkit-print-color-adjust: exact;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header class="topbar">
+    <a class="brand" href="index.html">THE EXECUTIVE <span>EDGE</span></a>
+    <a class="back" href="index.html">← Return to portfolio</a>
+</header>
+
+<section class="hero">
+    <p class="eyebrow">Professional Development / Reflection 04</p>
+    <h1>Different voices.<br><em>One shared direction.</em></h1>
+    <p class="hero-intro">
+        My reflection on collaboration, group development and the lessons
+        that teamwork can teach me about communication, accountability
+        and professional growth.
+    </p>
+
+    <div class="hero-meta">
+        <span>Rethabile Menyatso</span>
+        <span>Business Intelligence &amp; Data Analytics</span>
+        <span>2026</span>
+    </div>
+</section>
+
+<main>
+
+    <section class="opening">
+        <div>
+            <p class="section-label">The bigger picture</p>
+            <h2>Learning to work beyond myself.</h2>
+        </div>
+
+        <div>
+            <p>
+                As a first-year student in Business Intelligence and Data
+                Analytics, I am learning that success is not only about
+                individual ability. It also depends on how well I communicate,
+                share responsibility and work with people whose perspectives
+                may differ from my own.
+            </p>
+
+            <p>
+                I see group work as an opportunity to practise these skills
+                before entering the professional environment. In a field
+                where business decisions often depend on the combined
+                knowledge of analysts, managers and other team members,
+                collaboration is an important part of producing useful results.
+            </p>
+
+            <p>
+                The five stages below help me examine group development as a
+                process. They also encourage me to consider what I can
+                contribute, what I still need to improve and how I can become
+                a more dependable team member.
+            </p>
+        </div>
+    </section>
+
+    <section>
+        <div class="journey-heading">
+            <div>
+                <p class="section-label">The group journey</p>
+                <h2>Five stages of growth.</h2>
+            </div>
+
+            <p>
+                Tuckman's model provides a framework for understanding how
+                groups can move from initial introductions towards effective
+                collaboration and eventual closure.
+            </p>
+        </div>
+
+        <div class="timeline">
+
+            <article class="stage">
+                <div class="stage-number">01</div>
+
+                <div>
+                    <span class="stage-tag">Getting started</span>
+                    <h3>Forming — Finding our place</h3>
+
+                    <p>
+                        At the beginning of group work, members are still
+                        getting to know one another and understanding what
+                        the task requires. I recognise that this stage can
+                        bring a mixture of curiosity, uncertainty and
+                        anticipation because everyone is trying to understand
+                        how the group will operate.
+                    </p>
+
+                    <p>
+                        I would approach this stage by listening carefully,
+                        introducing my ideas respectfully and making an effort
+                        to understand the expectations of the task. Since I
+                        value collaboration and am willing to learn, I can use
+                        this period to identify how my strengths may support
+                        the group.
+                    </p>
+
+                    <p class="lesson">
+                        <strong>My lesson:</strong> A good start requires
+                        openness, clear expectations and a willingness to
+                        learn from people with different perspectives.
+                    </p>
+                </div>
+            </article>
+
+            <article class="stage">
+                <div class="stage-number">02</div>
+
+                <div>
+                    <span class="stage-tag">Working through differences</span>
+                    <h3>Storming — Handling challenges</h3>
+
+                    <p>
+                        As group members begin contributing more actively,
+                        differences in opinions, working styles or
+                        expectations may become more noticeable. I understand
+                        that disagreement does not automatically mean a group
+                        is failing. Sometimes it reveals that members care
+                        about the quality of the work but approach the task
+                        differently.
+                    </p>
+
+                    <p>
+                        My responsibility is to avoid treating every different
+                        opinion as a personal disagreement. I can ask
+                        questions, explain my reasoning calmly and remain
+                        willing to reconsider an idea when another approach
+                        is stronger. If a challenge arises, I would encourage
+                        the group to return to the task requirements and agree
+                        on a practical way forward.
+                    </p>
+
+                    <p class="lesson">
+                        <strong>My lesson:</strong> Professionalism means
+                        responding to differences constructively instead of
+                        allowing them to interfere with the shared goal.
+                    </p>
+                </div>
+            </article>
+
+            <article class="stage">
+                <div class="stage-number">03</div>
+
+                <div>
+                    <span class="stage-tag">Building consistency</span>
+                    <h3>Norming — Creating a rhythm</h3>
+
+                    <p>
+                        The norming stage is about developing shared
+                        expectations. A group can become more organised when
+                        members understand their responsibilities, communicate
+                        regularly and agree on how work should be completed.
+                    </p>
+
+                    <p>
+                        I can contribute by being dependable, respecting
+                        agreed deadlines and communicating when I need
+                        clarification. I also recognise the value of checking
+                        that everyone understands the plan rather than
+                        assuming that silence means agreement. Clear
+                        responsibilities can help reduce confusion and make
+                        the workload more manageable.
+                    </p>
+
+                    <p class="lesson">
+                        <strong>My lesson:</strong> Teamwork improves when
+                        expectations are discussed openly and members take
+                        responsibility for their contributions.
+                    </p>
+                </div>
+            </article>
+
+            <article class="stage">
+                <div class="stage-number">04</div>
+
+                <div>
+                    <span class="stage-tag">Working as one</span>
+                    <h3>Performing — Turning plans into results</h3>
+
+                    <p>
+                        During the performing stage, a group is better
+                        positioned to focus on the task because members
+                        understand their roles and can coordinate their
+                        efforts. This stage reminds me that collaboration
+                        should produce more than a collection of separate
+                        contributions: the work needs to form a clear and
+                        consistent final outcome.
+                    </p>
+
+                    <p>
+                        In a Business Intelligence and Data Analytics context,
+                        this could mean combining research, checking the
+                        accuracy of information, organising data and
+                        presenting findings in a way that makes sense to the
+                        intended audience. I can contribute through attention
+                        to detail, problem solving and my developing digital
+                        skills, while remaining open to feedback from others.
+                    </p>
+
+                    <p class="lesson">
+                        <strong>My lesson:</strong> Effective teamwork combines
+                        individual strengths with shared responsibility for
+                        the quality of the final result.
+                    </p>
+                </div>
+            </article>
+
+            <article class="stage">
+                <div class="stage-number">05</div>
+
+                <div>
+                    <span class="stage-tag">Reflecting and moving forward</span>
+                    <h3>Adjourning — Recognising the learning</h3>
+
+                    <p>
+                        Adjourning occurs when the group completes its task
+                        and prepares to move on. I see this stage as an
+                        opportunity to evaluate not only what the group
+                        produced, but also what I learned about myself as a
+                        collaborator.
+                    </p>
+
+                    <p>
+                        I would consider which contributions were effective,
+                        whether communication could have been clearer and
+                        what I would do differently in a future project.
+                        Recognising the effort of other members is also
+                        important because a completed task usually reflects
+                        several contributions rather than one person's work
+                        alone.
+                    </p>
+
+                    <p class="lesson">
+                        <strong>My lesson:</strong> Completing a task is
+                        valuable, but reflecting on the process helps me carry
+                        better habits into the next team experience.
+                    </p>
+                </div>
+            </article>
+
+        </div>
+    </section>
+
+    <section class="pullquote">
+        <div class="quote-mark">“</div>
+
+        <blockquote>
+            I want to become the kind of team member who contributes ideas,
+            respects people and takes responsibility for results.
+        </blockquote>
+
+        <p>My developing professional standard</p>
+    </section>
+
+    <section>
+        <p class="section-label">What I am taking forward</p>
+        <div class="journey-heading" style="margin-top: 12px;">
+            <h2>Lessons beyond the assignment.</h2>
+        </div>
+
+        <div class="learning-grid">
+
+            <article class="learning-card">
+                <div class="symbol">01</div>
+                <h3>Communication</h3>
+                <p>
+                    I want to express my ideas clearly, listen without
+                    interrupting and ask for clarification whenever
+                    expectations are uncertain.
+                </p>
+            </article>
+
+            <article class="learning-card">
+                <div class="symbol">02</div>
+                <h3>Accountability</h3>
+                <p>
+                    I need to take ownership of my responsibilities, respect
+                    agreed deadlines and communicate honestly about my
+                    progress.
+                </p>
+            </article>
+
+            <article class="learning-card">
+                <div class="symbol">03</div>
+                <h3>Adaptability</h3>
+                <p>
+                    I can become a stronger collaborator by accepting
+                    constructive feedback, adjusting my approach and
+                    recognising the value of other people's ideas.
+                </p>
+            </article>
+
+        </div>
+    </section>
+
+    <section class="closing">
+        <p class="section-label">My final reflection</p>
+
+        <h2>Better together, better prepared.</h2>
+
+        <p>
+            Reflecting on group development has helped me recognise that
+            collaboration involves more than dividing a task into smaller
+            parts. It requires communication, trust, patience and a shared
+            understanding of what the group is trying to achieve. Different
+            stages may bring different demands, and I need to be prepared to
+            learn from each one.
+        </p>
+
+        <p>
+            As I continue studying Business Intelligence and Data Analytics,
+            I want to strengthen my ability to work with others, contribute
+            thoughtfully and approach challenges with a problem-solving
+            mindset. These habits will be useful in academic projects and
+            in a future workplace where people need to combine their skills
+            to make informed decisions.
+        </p>
+
+        <p>
+            My goal is not to assume that every group experience will be
+            perfect. It is to become more aware of how I participate, how
+            I respond when things are difficult and how I can help create
+            a respectful and productive working environment.
+        </p>
+
+        <p class="signature">Rethabile Menyatso</p>
+
+        <div class="reflection-note">
+            <strong>Personalisation before submission:</strong>
+            Add at least one genuine example from your own group experience.
+            For example, explain how your group was formed, describe an actual
+            disagreement or challenge if one occurred, and state how your
+            group handled it. If a stage did not clearly occur in your
+            experience, say so honestly rather than inventing an event.
+        </div>
+    </section>
+
+</main>
+
+<footer class="footer">
+    <div>
+        <strong>THE EXECUTIVE EDGE</strong><br>
+        Rethabile Menyatso · Digital Portfolio
+    </div>
+
+    <div>
+        <a href="skills-projects.html">Continue to Skills &amp; Projects →</a>
+    </div>
+</footer>
+
+</body>
+</html>
