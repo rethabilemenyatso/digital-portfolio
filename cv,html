@@ -1,0 +1,796 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Curriculum Vitae | Rethabile Menyatso</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500&display=swap" rel="stylesheet">
+
+<style>
+:root {
+    --wine: #541D2B;
+    --wine-dark: #321019;
+    --ivory: #F3EBDD;
+    --paper: #FCF9F3;
+    --ink: #202020;
+    --copper: #B87962;
+    --silver: #B9B7B4;
+    --muted: #756A68;
+    --line: rgba(84,29,43,.18);
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+    background: var(--paper);
+    color: var(--ink);
+    font-family: "DM Sans", sans-serif;
+    line-height: 1.7;
+}
+
+a { color: inherit; text-decoration: none; }
+
+.topbar {
+    padding: 18px 6%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    flex-wrap: wrap;
+    border-bottom: 1px solid var(--line);
+    background: var(--paper);
+}
+
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.brand-mark {
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    background: var(--wine);
+    color: var(--ivory);
+    display: grid;
+    place-items: center;
+    font: italic 24px "Playfair Display", serif;
+}
+
+.brand-name {
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+}
+
+.brand-sub {
+    display: block;
+    font-size: 9px;
+    color: var(--muted);
+    letter-spacing: 1.5px;
+}
+
+.top-links {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.top-links a {
+    font-size: 10px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.top-links a:hover { color: var(--copper); }
+
+.page-intro {
+    background: var(--ivory);
+    padding: 50px 8%;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    gap: 30px;
+}
+
+.eyebrow {
+    font-size: 10px;
+    color: var(--wine);
+    font-weight: 800;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+}
+
+.page-intro h1 {
+    font: 500 clamp(43px, 7vw, 75px)/1.05 "Playfair Display", serif;
+    letter-spacing: -2px;
+    margin-top: 15px;
+}
+
+.page-intro h1 em { color: var(--wine); }
+
+.page-intro p {
+    max-width: 290px;
+    font-size: 12px;
+    color: var(--muted);
+    line-height: 1.9;
+}
+
+.resume {
+    max-width: 1220px;
+    margin: 55px auto;
+    padding: 0 30px;
+    display: grid;
+    grid-template-columns: 310px minmax(0, 1fr);
+    align-items: stretch;
+    box-shadow: 0 25px 75px rgba(50,16,25,.08);
+}
+
+.sidebar {
+    background: var(--wine);
+    color: var(--ivory);
+    padding: 36px 28px;
+}
+
+.portrait {
+    position: relative;
+    padding: 10px;
+    border: 1px solid rgba(243,235,221,.55);
+    margin-bottom: 28px;
+}
+
+.portrait img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    object-position: center 25%;
+    background: #79505A;
+}
+
+.sidebar-label {
+    font-size: 9px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: #D8A58D;
+}
+
+.sidebar h2 {
+    font: 500 32px/1.2 "Playfair Display", serif;
+    margin: 9px 0 12px;
+}
+
+.sidebar-intro {
+    font-size: 11px;
+    color: #E4D4D0;
+    line-height: 1.9;
+    margin-bottom: 30px;
+}
+
+.side-section {
+    padding: 23px 0;
+    border-top: 1px solid rgba(243,235,221,.2);
+}
+
+.side-section h3 {
+    color: #D8A58D;
+    font-size: 10px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 16px;
+}
+
+.side-section p,
+.side-section li {
+    font-size: 11px;
+    line-height: 1.9;
+    overflow-wrap: anywhere;
+}
+
+.side-section ul {
+    list-style: none;
+}
+
+.side-section li {
+    position: relative;
+    padding-left: 15px;
+    margin-bottom: 7px;
+}
+
+.side-section li::before {
+    content: "✳";
+    position: absolute;
+    left: 0;
+    color: #D8A58D;
+    font-size: 9px;
+}
+
+.side-section a {
+    text-decoration: underline;
+    text-decoration-color: rgba(243,235,221,.35);
+    text-underline-offset: 3px;
+}
+
+.resume-main {
+    background: #fffdf9;
+    padding: 46px 48px;
+}
+
+.resume-heading {
+    padding-bottom: 30px;
+    border-bottom: 2px solid var(--wine);
+}
+
+.resume-heading .document-label {
+    font-size: 9px;
+    color: var(--copper);
+    font-weight: 800;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+}
+
+.resume-heading h2 {
+    font: 500 clamp(34px, 4vw, 51px)/1.15 "Playfair Display", serif;
+    margin: 12px 0;
+    letter-spacing: -1.5px;
+}
+
+.resume-heading h2 em {
+    color: var(--wine);
+}
+
+.resume-heading p {
+    color: var(--muted);
+    font-size: 12px;
+    line-height: 1.9;
+    max-width: 600px;
+}
+
+.resume-section {
+    padding: 29px 0;
+    border-bottom: 1px solid var(--line);
+}
+
+.section-heading {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin-bottom: 21px;
+}
+
+.section-number {
+    width: 34px;
+    height: 34px;
+    display: grid;
+    place-items: center;
+    background: var(--ivory);
+    color: var(--wine);
+    font: italic 16px "Playfair Display", serif;
+    flex-shrink: 0;
+}
+
+.section-heading h3 {
+    font: 500 25px "Playfair Display", serif;
+}
+
+.section-note {
+    font-size: 9px;
+    color: var(--copper);
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    margin-left: auto;
+}
+
+.education-item {
+    display: grid;
+    grid-template-columns: 105px minmax(0, 1fr);
+    gap: 17px;
+    padding: 15px 0;
+}
+
+.education-date {
+    color: var(--wine);
+    font-size: 10px;
+    font-weight: 800;
+    line-height: 1.7;
+}
+
+.education-item h4 {
+    font-size: 13px;
+    line-height: 1.7;
+}
+
+.education-item .institution {
+    color: var(--muted);
+    font-size: 11px;
+    margin: 3px 0 8px;
+}
+
+.education-item ul {
+    padding-left: 16px;
+    color: var(--muted);
+    font-size: 11px;
+}
+
+.education-item li { margin-bottom: 4px; }
+
+.skill-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 13px;
+}
+
+.skill-card {
+    border: 1px solid var(--line);
+    padding: 18px;
+    background: var(--paper);
+}
+
+.skill-card .skill-icon {
+    color: var(--copper);
+    font-size: 19px;
+}
+
+.skill-card h4 {
+    font: 500 17px "Playfair Display", serif;
+    margin: 7px 0;
+}
+
+.skill-card p {
+    color: var(--muted);
+    font-size: 10px;
+    line-height: 1.8;
+}
+
+.strength-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.strength-list span {
+    border: 1px solid var(--line);
+    padding: 8px 11px;
+    color: var(--wine);
+    font-size: 10px;
+    font-weight: 700;
+}
+
+.achievement {
+    display: grid;
+    grid-template-columns: 45px 1fr;
+    gap: 15px;
+    align-items: start;
+    background: var(--ivory);
+    padding: 20px;
+}
+
+.achievement-icon {
+    width: 42px;
+    height: 42px;
+    display: grid;
+    place-items: center;
+    background: var(--wine);
+    color: var(--ivory);
+    font-size: 20px;
+}
+
+.achievement h4 {
+    font: 500 18px "Playfair Display", serif;
+}
+
+.achievement p {
+    margin-top: 5px;
+    color: var(--muted);
+    font-size: 11px;
+    line-height: 1.8;
+}
+
+.resume-end {
+    margin-top: 30px;
+    padding-top: 20px;
+    border-top: 1px solid var(--line);
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 15px;
+    color: var(--muted);
+    font-size: 9px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+.resume-end strong { color: var(--wine); }
+
+.action-row {
+    max-width: 1160px;
+    margin: 0 auto 65px;
+    padding: 0 30px;
+    display: flex;
+    justify-content: space-between;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.action-button {
+    border: 1px solid var(--wine);
+    padding: 13px 18px;
+    color: var(--wine);
+    background: transparent;
+    font: 700 10px "DM Sans", sans-serif;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    cursor: pointer;
+}
+
+.action-button.primary {
+    background: var(--wine);
+    color: white;
+}
+
+.action-button:hover { background: var(--ivory); color: var(--wine); }
+
+footer {
+    background: var(--wine-dark);
+    color: var(--ivory);
+    padding: 26px 7%;
+    display: flex;
+    justify-content: space-between;
+    gap: 15px;
+    flex-wrap: wrap;
+    font-size: 10px;
+}
+
+footer a { color: #D8A58D; }
+
+@media (max-width: 850px) {
+    .resume {
+        grid-template-columns: 260px minmax(0, 1fr);
+        padding: 0 18px;
+    }
+    .sidebar { padding: 28px 20px; }
+    .resume-main { padding: 35px 25px; }
+    .page-intro { padding: 40px 6%; }
+}
+
+@media (max-width: 650px) {
+    .topbar { padding: 17px 5%; }
+    .top-links { gap: 12px; }
+    .top-links a { font-size: 9px; }
+    .page-intro { flex-direction: column; align-items: flex-start; }
+    .resume {
+        display: flex;
+        flex-direction: column;
+        margin: 28px auto;
+        padding: 0 12px;
+        box-shadow: none;
+    }
+    .sidebar { padding: 28px; }
+    .portrait img { height: 350px; }
+    .resume-main { padding: 30px 20px; }
+    .education-item { grid-template-columns: 1fr; gap: 4px; }
+    .skill-grid { grid-template-columns: 1fr; }
+    .section-note { display: none; }
+    .action-row { padding: 0 18px; }
+}
+
+@media print {
+    @page { size: A4; margin: 10mm; }
+    body { background: white; }
+    .topbar, .page-intro, .action-row, footer { display: none; }
+    .resume {
+        margin: 0;
+        padding: 0;
+        max-width: none;
+        display: grid;
+        grid-template-columns: 30% 70%;
+        box-shadow: none;
+    }
+    .sidebar { padding: 18px; }
+    .resume-main { padding: 22px; }
+    .portrait img { height: 190px; }
+    .resume-section { padding: 17px 0; }
+    .skill-card { padding: 10px; }
+    .achievement { padding: 12px; }
+    * { print-color-adjust: exact; -webkit-print-color-adjust: exact; }
+}
+</style>
+</head>
+
+<body>
+
+<header class="topbar">
+    <a class="brand" href="index.html">
+        <span class="brand-mark">R</span>
+        <span>
+            <span class="brand-name">Rethabile Menyatso</span>
+            <span class="brand-sub">The Executive Edge</span>
+        </span>
+    </a>
+
+    <nav class="top-links" aria-label="Page navigation">
+        <a href="index.html">Home</a>
+        <a href="individual-reflection.html">Reflection</a>
+        <a href="skills-projects.html">Skills</a>
+        <a href="index.html#portfolio">Portfolio Index</a>
+    </nav>
+</header>
+
+<section class="page-intro">
+    <div>
+        <div class="eyebrow">Professional Profile / 01</div>
+        <h1>Curriculum <em>Vitae.</em></h1>
+    </div>
+    <p>
+        A snapshot of my academic journey, developing capabilities,
+        personal strengths and professional aspirations.
+    </p>
+</section>
+
+<main class="resume">
+
+    <!-- EXECUTIVE SIDEBAR -->
+    <aside class="sidebar">
+
+        <div class="portrait">
+            <img
+                src="images/rethabile-portrait-3.jpg"
+                alt="Rethabile Menyatso in corporate attire"
+                onerror="this.style.visibility='hidden';"
+            >
+        </div>
+
+        <div class="sidebar-label">The candidate</div>
+        <h2>Rethabile<br>Menyatso.</h2>
+
+        <p class="sidebar-intro">
+            Business Intelligence and Data Analytics student
+            with a growing interest in using information,
+            technology and creative thinking to support
+            informed business decisions.
+        </p>
+
+        <div class="side-section">
+            <h3>Contact details</h3>
+            <p>Gaborone, Botswana</p>
+            <p>+267 71 226 236</p>
+            <p>
+                <a href="mailto:rethabilemenyatso520@gmail.com">
+                    rethabilemenyatso520@gmail.com
+                </a>
+            </p>
+        </div>
+
+        <div class="side-section">
+            <h3>Personal strengths</h3>
+            <ul>
+                <li>Willingness to learn</li>
+                <li>Self-motivation</li>
+                <li>Creativity</li>
+                <li>Adaptability</li>
+                <li>Attention to detail</li>
+                <li>Collaboration</li>
+            </ul>
+        </div>
+
+        <div class="side-section">
+            <h3>Interests</h3>
+            <ul>
+                <li>Visual arts</li>
+                <li>Crocheting</li>
+                <li>Puzzle-solving</li>
+                <li>Trivia and research</li>
+                <li>Business problem-solving</li>
+            </ul>
+        </div>
+
+        <div class="side-section">
+            <h3>Career direction</h3>
+            <p>
+                Aspiring data analyst and entrepreneur,
+                committed to continued learning and professional growth.
+            </p>
+        </div>
+
+    </aside>
+
+    <!-- MAIN RESUME -->
+    <article class="resume-main">
+
+        <div class="resume-heading">
+            <div class="document-label">Professional document · 2026</div>
+            <h2>Rethabile <em>Menyatso</em></h2>
+            <p>
+                Business Intelligence & Data Analytics
+                <br>
+                BAC · First-year undergraduate student
+            </p>
+        </div>
+
+        <!-- OBJECTIVE -->
+        <section class="resume-section">
+            <div class="section-heading">
+                <span class="section-number">01</span>
+                <h3>Professional Objective</h3>
+            </div>
+
+            <p style="font-size:12px; color:var(--muted); line-height:2;">
+                I am a motivated undergraduate student pursuing a
+                qualification in Business Intelligence and Data Analytics.
+                I am eager to gain practical experience, develop my
+                professional skills and apply my knowledge in a workplace
+                environment. As a willing learner with an interest in
+                business, data analysis and problem-solving, I aim to
+                strengthen my ability to understand information and
+                contribute to informed decision-making.
+            </p>
+        </section>
+
+        <!-- EDUCATION -->
+        <section class="resume-section">
+            <div class="section-heading">
+                <span class="section-number">02</span>
+                <h3>Education</h3>
+                <span class="section-note">Academic journey</span>
+            </div>
+
+            <div class="education-item">
+                <div class="education-date">JUN 2026<br>– JUL 2030</div>
+                <div>
+                    <h4>Business Intelligence and Data Analytics</h4>
+                    <p class="institution">
+                        Botswana School of Business Sciences
+                    </p>
+                    <ul>
+                        <li>Fundamentals of Business Finance</li>
+                        <li>Statistical Foundations for Data Analysis</li>
+                        <li>Communication and Study Skills</li>
+                        <li>Computer Technology</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="education-item">
+                <div class="education-date">JAN 2023<br>– NOV 2024</div>
+                <div>
+                    <h4>Botswana General Certificate of Secondary Education</h4>
+                    <p class="institution">Madiba Senior Secondary School</p>
+                    <p style="font-size:11px; color:var(--muted);">
+                        Secondary education
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- TECHNICAL SKILLS -->
+        <section class="resume-section">
+            <div class="section-heading">
+                <span class="section-number">03</span>
+                <h3>Technical Skills</h3>
+            </div>
+
+            <div class="skill-grid">
+                <div class="skill-card">
+                    <div class="skill-icon">▦</div>
+                    <h4>Microsoft Excel</h4>
+                    <p>
+                        Spreadsheet use and developing skills for
+                        organising information and working with data.
+                    </p>
+                </div>
+
+                <div class="skill-card">
+                    <div class="skill-icon">▤</div>
+                    <h4>Microsoft Word</h4>
+                    <p>
+                        Preparing and formatting documents for
+                        academic and professional communication.
+                    </p>
+                </div>
+
+                <div class="skill-card">
+                    <div class="skill-icon">⌘</div>
+                    <h4>Microsoft Access</h4>
+                    <p>
+                        Database-related skills and an interest in
+                        organising and managing information.
+                    </p>
+                </div>
+
+                <div class="skill-card">
+                    <div class="skill-icon">⌕</div>
+                    <h4>Problem-solving</h4>
+                    <p>
+                        Approaching questions thoughtfully and exploring
+                        possible solutions through research and reasoning.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- TRANSFERABLE SKILLS -->
+        <section class="resume-section">
+            <div class="section-heading">
+                <span class="section-number">04</span>
+                <h3>Professional Abilities</h3>
+            </div>
+
+            <div class="strength-list">
+                <span>Teamwork</span>
+                <span>Collaboration</span>
+                <span>Creativity</span>
+                <span>Adaptability</span>
+                <span>Attention to Detail</span>
+                <span>Self-Motivation</span>
+                <span>Willingness to Learn</span>
+                <span>Research</span>
+            </div>
+        </section>
+
+        <!-- ACHIEVEMENT -->
+        <section class="resume-section">
+            <div class="section-heading">
+                <span class="section-number">05</span>
+                <h3>Achievement</h3>
+            </div>
+
+            <div class="achievement">
+                <div class="achievement-icon">✳</div>
+                <div>
+                    <h4>Certificate of Appreciation</h4>
+                    <p>
+                        Recognition associated with a braiding class,
+                        reflecting participation in a creative learning
+                        experience. Further details can be added if required.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- INTERESTS -->
+        <section class="resume-section">
+            <div class="section-heading">
+                <span class="section-number">06</span>
+                <h3>Academic & Career Interests</h3>
+            </div>
+
+            <p style="font-size:12px; color:var(--muted); line-height:2;">
+                My academic interests include computer technology,
+                fundamentals of business finance, problem-solving and
+                understanding how organisations use data to make decisions.
+                I aspire to become a successful data analyst and
+                entrepreneur, combining analytical thinking with creativity
+                and business awareness.
+            </p>
+        </section>
+
+        <div class="resume-end">
+            <span><strong>RM.</strong> · The Executive Edge</span>
+            <span>Learning · Developing · Progressing</span>
+        </div>
+
+    </article>
+</main>
+
+<div class="action-row">
+    <a class="action-button" href="index.html">← Back to home</a>
+    <button class="action-button primary" onclick="window.print()">
+        Print / Save as PDF ↗
+    </button>
+    <a class="action-button" href="individual-reflection.html">
+        Next: Reflection →
+    </a>
+</div>
+
+<footer>
+    <span>© 2026 Rethabile Menyatso</span>
+    <span>Business Intelligence & Data Analytics</span>
+    <a href="index.html">The Executive Edge ↗</a>
+</footer>
+
+</body>
+</html>
