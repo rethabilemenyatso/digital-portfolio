@@ -1,0 +1,586 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Application Letter | Rethabile Menyatso</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+
+<style>
+:root {
+    --wine: #541D2B;
+    --wine-dark: #321019;
+    --ivory: #F3EBDD;
+    --paper: #FFFCF6;
+    --copper: #B87962;
+    --silver: #B9B7B4;
+    --ink: #202020;
+    --muted: #71676A;
+    --line: rgba(84,29,43,.18);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background: var(--ivory);
+    color: var(--ink);
+    font-family: 'DM Sans', sans-serif;
+    line-height: 1.75;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+.topbar {
+    background: var(--wine-dark);
+    color: var(--ivory);
+    padding: 18px 7%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 18px;
+}
+
+.brand {
+    font-size: .8rem;
+    font-weight: 700;
+    letter-spacing: 3px;
+}
+
+.brand span {
+    color: var(--copper);
+}
+
+.back-link {
+    font-size: .8rem;
+    color: #E6D8D2;
+    border-bottom: 1px solid var(--copper);
+    padding-bottom: 3px;
+}
+
+.hero {
+    background: var(--wine);
+    color: var(--ivory);
+    padding: 65px 8% 60px;
+    position: relative;
+    overflow: hidden;
+}
+
+.eyebrow {
+    color: #D8A58E;
+    font-size: .7rem;
+    font-weight: 700;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    margin-bottom: 18px;
+}
+
+.hero h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(3rem, 7vw, 6rem);
+    font-weight: 500;
+    line-height: 1.05;
+}
+
+.hero h1 em {
+    color: #D8A58E;
+    font-weight: 500;
+}
+
+.hero p.description {
+    max-width: 650px;
+    color: #E5D8D4;
+    margin-top: 22px;
+}
+
+.hero-bottom {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 15px;
+    border-top: 1px solid rgba(243,235,221,.2);
+    margin-top: 35px;
+    padding-top: 18px;
+    color: #D8C5C0;
+    font-size: .7rem;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+}
+
+main {
+    max-width: 1100px;
+    margin: auto;
+    padding: 65px 7% 90px;
+}
+
+.intro {
+    display: grid;
+    grid-template-columns: .8fr 1.2fr;
+    gap: 40px;
+    margin-bottom: 45px;
+    align-items: start;
+}
+
+.label {
+    color: var(--wine);
+    font-size: .7rem;
+    font-weight: 700;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+}
+
+.intro h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2rem, 4vw, 3.1rem);
+    line-height: 1.2;
+    font-weight: 500;
+    margin-top: 12px;
+}
+
+.intro p {
+    color: #5D5254;
+    font-size: .92rem;
+}
+
+.letter-paper {
+    background: var(--paper);
+    border: 1px solid var(--line);
+    box-shadow: 0 18px 55px rgba(50,16,25,.08);
+    position: relative;
+    padding: clamp(25px, 6vw, 70px);
+}
+
+.letter-paper::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 7px;
+    height: 100%;
+    background: var(--copper);
+}
+
+.letter-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: start;
+    gap: 25px;
+    padding-bottom: 30px;
+    border-bottom: 1px solid var(--line);
+    margin-bottom: 30px;
+}
+
+.sender h2 {
+    font-family: 'Playfair Display', serif;
+    color: var(--wine);
+    font-size: clamp(1.6rem, 3vw, 2.3rem);
+    font-weight: 500;
+    line-height: 1.2;
+}
+
+.sender p {
+    font-size: .8rem;
+    color: var(--muted);
+    margin-top: 9px;
+}
+
+.letter-stamp {
+    flex-shrink: 0;
+    width: 90px;
+    height: 90px;
+    border: 1px solid var(--copper);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: var(--wine);
+    font-family: 'Playfair Display', serif;
+    font-size: .85rem;
+    line-height: 1.3;
+}
+
+.date {
+    color: var(--muted);
+    font-size: .85rem;
+    margin-bottom: 22px;
+}
+
+.recipient {
+    margin-bottom: 25px;
+    color: #4F4547;
+    font-size: .9rem;
+}
+
+.recipient strong {
+    color: var(--wine);
+}
+
+.subject {
+    color: var(--wine);
+    font-weight: 700;
+    font-size: .91rem;
+    margin-bottom: 22px;
+    padding: 12px 15px;
+    background: #F1E5DF;
+    border-left: 3px solid var(--copper);
+}
+
+.letter-body p {
+    margin-bottom: 18px;
+    font-size: .94rem;
+    color: #40383A;
+}
+
+.letter-body p.salutation {
+    color: var(--wine);
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+
+.letter-body p.closing {
+    margin-top: 27px;
+    margin-bottom: 8px;
+}
+
+.signature {
+    margin-top: 25px;
+}
+
+.signature .script {
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    font-size: 1.8rem;
+    color: var(--copper);
+    line-height: 1.3;
+}
+
+.signature strong {
+    display: block;
+    color: var(--wine);
+    font-size: .9rem;
+    margin-top: 5px;
+}
+
+.signature span {
+    display: block;
+    color: var(--muted);
+    font-size: .78rem;
+}
+
+.letter-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-top: 40px;
+    padding-top: 20px;
+    border-top: 1px solid var(--line);
+    color: var(--muted);
+    font-size: .72rem;
+}
+
+.letter-footer strong {
+    color: var(--wine);
+    letter-spacing: 1px;
+}
+
+.guidance {
+    margin-top: 40px;
+    background: #E7D8D1;
+    padding: 28px;
+    border-left: 4px solid var(--copper);
+}
+
+.guidance h3 {
+    font-family: 'Playfair Display', serif;
+    color: var(--wine);
+    font-size: 1.5rem;
+    font-weight: 500;
+    margin-bottom: 10px;
+}
+
+.guidance p,
+.guidance li {
+    color: #56484B;
+    font-size: .85rem;
+}
+
+.guidance ul {
+    padding-left: 20px;
+    margin-top: 12px;
+}
+
+.guidance li {
+    margin-bottom: 6px;
+}
+
+.footer {
+    background: var(--wine-dark);
+    color: #D8C8C3;
+    padding: 28px 7%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 15px;
+    font-size: .75rem;
+}
+
+.footer strong {
+    color: var(--ivory);
+    letter-spacing: 1px;
+}
+
+.footer a {
+    color: #D8A58E;
+}
+
+@media(max-width: 700px) {
+    main {
+        padding: 45px 5% 65px;
+    }
+
+    .intro {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+
+    .letter-header {
+        flex-direction: column;
+    }
+
+    .letter-stamp {
+        width: 72px;
+        height: 72px;
+    }
+
+    .letter-paper {
+        padding: 30px 23px 30px 28px;
+    }
+}
+
+@media print {
+    body {
+        background: white;
+    }
+
+    .topbar,
+    .hero,
+    .guidance,
+    .footer {
+        display: none;
+    }
+
+    main {
+        max-width: 100%;
+        padding: 0;
+    }
+
+    .intro {
+        display: none;
+    }
+
+    .letter-paper {
+        box-shadow: none;
+        border: none;
+        padding: 20px;
+    }
+
+    .letter-paper::before {
+        print-color-adjust: exact;
+        -webkit-print-color-adjust: exact;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header class="topbar">
+    <a class="brand" href="index.html">THE EXECUTIVE <span>EDGE</span></a>
+    <a class="back-link" href="index.html">← Back to portfolio</a>
+</header>
+
+<section class="hero">
+    <p class="eyebrow">Professional Correspondence / 06</p>
+
+    <h1>Opening doors.<br><em>Making an impression.</em></h1>
+
+    <p class="description">
+        A formal application letter presenting my academic direction,
+        developing skills and willingness to learn in a professional
+        business environment.
+    </p>
+
+    <div class="hero-bottom">
+        <span>Rethabile Menyatso</span>
+        <span>Gaborone, Botswana</span>
+        <span>Application Correspondence</span>
+    </div>
+</section>
+
+<main>
+
+    <section class="intro">
+        <div>
+            <p class="label">The purpose</p>
+            <h2>Professional, prepared and ready to learn.</h2>
+        </div>
+
+        <p>
+            An application letter should do more than repeat a CV. It should
+            connect a person's interests and abilities to the opportunity
+            being pursued. This draft presents my interest in gaining
+            practical exposure while continuing to develop my skills in
+            Business Intelligence and Data Analytics.
+        </p>
+    </section>
+
+    <article class="letter-paper">
+
+        <div class="letter-header">
+            <div class="sender">
+                <h2>Rethabile Menyatso</h2>
+                <p>Business Intelligence &amp; Data Analytics Student</p>
+                <p>Gaborone, Botswana</p>
+                <p>+267 71 226 236</p>
+                <p>rethabilemenyatso520@gmail.com</p>
+            </div>
+
+            <div class="letter-stamp">
+                THE<br>EXECUTIVE<br>EDGE
+            </div>
+        </div>
+
+        <p class="date">18 November 2026</p>
+
+        <div class="recipient">
+            <strong>The Hiring Manager</strong><br>
+            [Company or Organisation Name]<br>
+            [Company Address]
+        </div>
+
+        <div class="subject">
+            RE: APPLICATION FOR AN ENTRY-LEVEL OPPORTUNITY OR WORKPLACE EXPERIENCE
+        </div>
+
+        <div class="letter-body">
+
+            <p class="salutation">Dear Hiring Manager,</p>
+
+            <p>
+                I am writing to express my interest in an entry-level
+                opportunity or workplace experience placement within your
+                organisation. I am a first-year student pursuing Business
+                Intelligence and Data Analytics at Botswana School of
+                Business Sciences, and I am eager to connect my academic
+                learning with practical workplace experience.
+            </p>
+
+            <p>
+                My studies have introduced me to areas such as computer
+                technology, statistical foundations for data analysis,
+                communication and study skills, and the fundamentals of
+                business finance. These subjects are helping me develop an
+                understanding of how digital tools, business knowledge and
+                analytical thinking can work together to support informed
+                decisions.
+            </p>
+
+            <p>
+                I consider myself a collaborative, adaptable and motivated
+                learner. My developing skills include Microsoft Excel,
+                Microsoft Word and Microsoft Access, alongside problem
+                solving, attention to detail and creative thinking. I also
+                enjoy research and puzzles, which encourage me to approach
+                questions with curiosity and patience.
+            </p>
+
+            <p>
+                Although I am at the beginning of my professional journey,
+                I am willing to learn, accept constructive feedback and take
+                responsibility for assigned tasks. I would value the
+                opportunity to observe professional practices, contribute
+                where appropriate and strengthen my understanding of how
+                organisations use information to improve their work.
+            </p>
+
+            <p>
+                My long-term ambition is to become a successful data analyst
+                and entrepreneur. I believe that practical exposure would
+                help me build the discipline, technical confidence and
+                professional awareness needed to work towards these goals.
+                I would welcome the opportunity to discuss how my interests,
+                attitude and developing abilities could contribute to your
+                organisation.
+            </p>
+
+            <p class="closing">Thank you for considering my application. I look
+            forward to the possibility of hearing from you.</p>
+
+            <p>Yours faithfully,</p>
+
+            <div class="signature">
+                <div class="script">Rethabile Menyatso</div>
+                <strong>Rethabile Menyatso</strong>
+                <span>Business Intelligence &amp; Data Analytics Student</span>
+            </div>
+
+        </div>
+
+        <div class="letter-footer">
+            <span><strong>THE EXECUTIVE EDGE</strong></span>
+            <span>Professional correspondence · 2026</span>
+        </div>
+
+    </article>
+
+    <aside class="guidance">
+        <h3>Make this letter yours.</h3>
+
+        <p>
+            Before submitting or sending this letter, update the details
+            below to match the real opportunity.
+        </p>
+
+        <ul>
+            <li>Replace the company name and address with the actual details.</li>
+            <li>Change the subject line to the exact position or placement.</li>
+            <li>Include a genuine example of a relevant skill or coursework task if appropriate.</li>
+            <li>Confirm the institution's official name and your current programme details.</li>
+            <li>Keep the letter to one page when using it for an actual application.</li>
+        </ul>
+    </aside>
+
+</main>
+
+<footer class="footer">
+    <div>
+        <strong>THE EXECUTIVE EDGE</strong><br>
+        Rethabile Menyatso · Digital Portfolio
+    </div>
+
+    <div>
+        <a href="email-template.html">Continue to Email Template →</a>
+    </div>
+</footer>
+
+</body>
+</html>
