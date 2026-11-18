@@ -1,0 +1,868 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Rethabile Menyatso's study resources for Business Intelligence and Data Analytics.">
+  <title>Study Resources | Rethabile Menyatso</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --oxblood: #541D2B;
+      --deep: #321019;
+      --ivory: #F3EBDD;
+      --paper: #FFFCF7;
+      --onyx: #202020;
+      --silver: #B9B7B4;
+      --copper: #B87962;
+      --muted: #77716D;
+      --line: #E5DCD1;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background: var(--ivory);
+      color: var(--onyx);
+      font-family: "DM Sans", sans-serif;
+      line-height: 1.7;
+    }
+
+    a {
+      color: inherit;
+    }
+
+    .topbar {
+      background: var(--deep);
+      color: var(--ivory);
+      padding: 17px 7%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .brand {
+      font-family: "Playfair Display", serif;
+      font-size: 1.2rem;
+      letter-spacing: 1px;
+    }
+
+    .brand span {
+      color: var(--copper);
+    }
+
+    .top-label {
+      color: #D7C9C4;
+      text-transform: uppercase;
+      font-size: 0.7rem;
+      letter-spacing: 2px;
+    }
+
+    .navigation {
+      background: var(--paper);
+      padding: 13px 7%;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 18px;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .navigation a {
+      font-size: 0.77rem;
+      font-weight: 700;
+      text-decoration: none;
+      color: #5C5551;
+    }
+
+    .navigation a:hover {
+      color: var(--oxblood);
+    }
+
+    .hero {
+      background: var(--oxblood);
+      color: var(--ivory);
+      padding: 66px 8% 58px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::after {
+      content: "08";
+      position: absolute;
+      right: 7%;
+      top: -42px;
+      font-family: "Playfair Display", serif;
+      font-size: clamp(12rem, 25vw, 22rem);
+      line-height: 1;
+      color: rgba(255,255,255,0.045);
+      pointer-events: none;
+    }
+
+    .eyebrow {
+      text-transform: uppercase;
+      letter-spacing: 3px;
+      font-size: 0.72rem;
+      font-weight: 700;
+      color: var(--copper);
+      margin-bottom: 15px;
+    }
+
+    h1, h2, h3 {
+      font-family: "Playfair Display", serif;
+      font-weight: 600;
+      line-height: 1.2;
+    }
+
+    h1 {
+      max-width: 760px;
+      font-size: clamp(2.7rem, 6vw, 5.2rem);
+      margin-bottom: 18px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .hero p {
+      max-width: 660px;
+      color: #E9DDD7;
+      font-size: 0.98rem;
+      position: relative;
+      z-index: 1;
+    }
+
+    .hero-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 27px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .hero-meta span {
+      border: 1px solid rgba(243,235,221,0.32);
+      border-radius: 30px;
+      padding: 7px 13px;
+      font-size: 0.72rem;
+    }
+
+    main {
+      max-width: 1250px;
+      margin: auto;
+      padding: 48px 6%;
+    }
+
+    .section-heading {
+      display: flex;
+      align-items: end;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 14px;
+      margin-bottom: 23px;
+    }
+
+    .section-heading h2 {
+      font-size: clamp(1.8rem, 3vw, 2.6rem);
+    }
+
+    .section-heading p {
+      color: var(--muted);
+      max-width: 430px;
+      font-size: 0.85rem;
+    }
+
+    .resource-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 18px;
+    }
+
+    .resource-card {
+      background: var(--paper);
+      border: 1px solid var(--line);
+      padding: 25px;
+      display: flex;
+      flex-direction: column;
+      min-height: 290px;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .resource-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 28px rgba(50,16,25,0.08);
+    }
+
+    .card-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 19px;
+    }
+
+    .resource-icon {
+      width: 46px;
+      height: 46px;
+      background: var(--ivory);
+      color: var(--oxblood);
+      display: grid;
+      place-items: center;
+      font-weight: 700;
+      font-size: 0.83rem;
+      border-radius: 50%;
+    }
+
+    .category {
+      color: var(--oxblood);
+      background: #F0E0DF;
+      padding: 5px 9px;
+      font-size: 0.63rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    .resource-card h3 {
+      font-size: 1.35rem;
+      margin-bottom: 11px;
+    }
+
+    .resource-card p {
+      color: #69615C;
+      font-size: 0.84rem;
+      margin-bottom: 19px;
+    }
+
+    .resource-card .use {
+      border-top: 1px solid var(--line);
+      padding-top: 13px;
+      margin-top: auto;
+      margin-bottom: 14px;
+      font-size: 0.76rem;
+      color: var(--onyx);
+    }
+
+    .resource-card .use strong {
+      color: var(--oxblood);
+    }
+
+    .resource-link {
+      color: var(--oxblood);
+      font-size: 0.8rem;
+      font-weight: 700;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      width: fit-content;
+      border-bottom: 1px solid var(--copper);
+      padding-bottom: 3px;
+    }
+
+    .resource-link:hover {
+      color: var(--copper);
+    }
+
+    .study-system {
+      background: var(--onyx);
+      color: var(--ivory);
+      padding: 39px;
+      margin-top: 55px;
+      display: grid;
+      grid-template-columns: 0.85fr 1.4fr;
+      gap: 40px;
+    }
+
+    .study-system h2 {
+      font-size: 2.2rem;
+      margin-bottom: 14px;
+    }
+
+    .study-system .intro {
+      color: #D0C8C1;
+      font-size: 0.86rem;
+    }
+
+    .steps {
+      display: grid;
+      gap: 0;
+    }
+
+    .step {
+      display: grid;
+      grid-template-columns: 42px 1fr;
+      gap: 15px;
+      padding: 14px 0;
+      border-bottom: 1px solid #494442;
+    }
+
+    .step:last-child {
+      border-bottom: none;
+    }
+
+    .step-number {
+      color: var(--copper);
+      font-family: "Playfair Display", serif;
+      font-size: 1.45rem;
+    }
+
+    .step h3 {
+      font-family: "DM Sans", sans-serif;
+      font-size: 0.92rem;
+      margin-bottom: 4px;
+    }
+
+    .step p {
+      color: #C8C0BA;
+      font-size: 0.8rem;
+    }
+
+    .weekly-plan {
+      margin-top: 55px;
+    }
+
+    .plan-table-wrap {
+      overflow-x: auto;
+      background: var(--paper);
+      border: 1px solid var(--line);
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      min-width: 600px;
+    }
+
+    th, td {
+      text-align: left;
+      padding: 16px 19px;
+      border-bottom: 1px solid var(--line);
+      font-size: 0.82rem;
+      vertical-align: top;
+    }
+
+    th {
+      background: var(--deep);
+      color: var(--ivory);
+      text-transform: uppercase;
+      font-size: 0.7rem;
+      letter-spacing: 1px;
+    }
+
+    tr:last-child td {
+      border-bottom: none;
+    }
+
+    td:first-child {
+      font-weight: 700;
+      color: var(--oxblood);
+      white-space: nowrap;
+    }
+
+    .integrity-note {
+      margin-top: 38px;
+      background: #E9D8D0;
+      border-left: 5px solid var(--copper);
+      padding: 25px 28px;
+      display: grid;
+      grid-template-columns: 50px 1fr;
+      gap: 16px;
+    }
+
+    .integrity-symbol {
+      font-family: "Playfair Display", serif;
+      color: var(--oxblood);
+      font-size: 2rem;
+    }
+
+    .integrity-note h3 {
+      font-size: 1.25rem;
+      margin-bottom: 7px;
+    }
+
+    .integrity-note p {
+      color: #5F504A;
+      font-size: 0.84rem;
+    }
+
+    .closing-strip {
+      margin-top: 55px;
+      padding: 35px;
+      background: var(--paper);
+      border: 1px solid var(--line);
+      text-align: center;
+    }
+
+    .closing-strip h2 {
+      font-size: 1.8rem;
+      margin-bottom: 10px;
+    }
+
+    .closing-strip p {
+      max-width: 600px;
+      margin: 0 auto 20px;
+      color: var(--muted);
+      font-size: 0.86rem;
+    }
+
+    .button-link {
+      display: inline-block;
+      background: var(--oxblood);
+      color: var(--ivory);
+      padding: 12px 20px;
+      text-decoration: none;
+      font-size: 0.8rem;
+      font-weight: 700;
+    }
+
+    .button-link:hover {
+      background: var(--deep);
+    }
+
+    footer {
+      background: var(--deep);
+      color: #D6CBC5;
+      padding: 25px 7%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 15px;
+      flex-wrap: wrap;
+      font-size: 0.73rem;
+    }
+
+    footer a {
+      color: var(--ivory);
+      text-decoration: none;
+    }
+
+    @media (max-width: 900px) {
+      .resource-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .study-system {
+        grid-template-columns: 1fr;
+        gap: 20px;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .topbar {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+
+      .hero {
+        padding: 49px 7%;
+      }
+
+      main {
+        padding: 35px 5%;
+      }
+
+      .resource-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .resource-card {
+        min-height: auto;
+      }
+
+      .study-system {
+        padding: 26px 22px;
+      }
+
+      .integrity-note {
+        grid-template-columns: 1fr;
+        padding: 22px;
+      }
+
+      .closing-strip {
+        padding: 28px 20px;
+      }
+    }
+
+    @media print {
+      body {
+        background: white;
+      }
+
+      .topbar, .navigation, .hero, footer {
+        print-color-adjust: exact;
+        -webkit-print-color-adjust: exact;
+      }
+
+      .resource-card, .study-system, .integrity-note {
+        break-inside: avoid;
+      }
+
+      .resource-card:hover {
+        transform: none;
+        box-shadow: none;
+      }
+
+      .button-link {
+        display: none;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header class="topbar">
+    <div class="brand">THE EXECUTIVE <span>EDGE.</span></div>
+    <div class="top-label">Rethabile Menyatso · Learning Hub</div>
+  </header>
+
+  <nav class="navigation" aria-label="Portfolio navigation">
+    <a href="index.html">01 Home</a>
+    <a href="cv.html">02 CV</a>
+    <a href="individual-reflection.html">03 Reflection</a>
+    <a href="group-reflection.html">04 Group Work</a>
+    <a href="skills-projects.html">05 Skills</a>
+    <a href="application-letter.html">06 Letter</a>
+    <a href="email-template.html">07 Email</a>
+    <a href="study-resources.html" aria-current="page">08 Resources</a>
+    <a href="professional-vision.html">09 Vision</a>
+  </nav>
+
+  <section class="hero">
+    <div class="eyebrow">Knowledge is a professional advantage</div>
+    <h1>My Learning<br>Intelligence Hub.</h1>
+    <p>
+      A curated collection of learning resources that supports my development
+      in Business Intelligence and Data Analytics. From understanding
+      statistical concepts to strengthening my digital and business skills,
+      this is where curiosity becomes a practical learning strategy.
+    </p>
+    <div class="hero-meta">
+      <span>Business Intelligence</span>
+      <span>Statistics & Data</span>
+      <span>Finance</span>
+      <span>Academic Communication</span>
+    </div>
+  </section>
+
+  <main>
+    <section aria-labelledby="resources-heading">
+      <div class="section-heading">
+        <div>
+          <div class="eyebrow">The resource library</div>
+          <h2 id="resources-heading">Tools for intellectual growth.</h2>
+        </div>
+        <p>
+          These external learning platforms can supplement my lectures,
+          assignments and independent study. Each resource has a specific
+          purpose in my academic development.
+        </p>
+      </div>
+
+      <div class="resource-grid">
+
+        <article class="resource-card">
+          <div class="card-top">
+            <div class="resource-icon">EX</div>
+            <span class="category">Digital skills</span>
+          </div>
+          <h3>Microsoft Excel Support</h3>
+          <p>
+            Official guidance for spreadsheets, formulas, functions,
+            charts, tables and organising information. These skills are
+            useful for preparing data and presenting findings clearly.
+          </p>
+          <div class="use"><strong>My focus:</strong> Formulas, charts and data organisation.</div>
+          <a class="resource-link"
+             href="https://support.microsoft.com/excel"
+             target="_blank" rel="noopener noreferrer">
+            Explore Excel support ↗
+          </a>
+        </article>
+
+        <article class="resource-card">
+          <div class="card-top">
+            <div class="resource-icon">DB</div>
+            <span class="category">Data systems</span>
+          </div>
+          <h3>Microsoft Access Support</h3>
+          <p>
+            Guidance on relational databases, tables, queries, forms and
+            reports. This resource can help me understand how information
+            is structured, retrieved and managed.
+          </p>
+          <div class="use"><strong>My focus:</strong> Database fundamentals and queries.</div>
+          <a class="resource-link"
+             href="https://support.microsoft.com/access"
+             target="_blank" rel="noopener noreferrer">
+            Explore Access support ↗
+          </a>
+        </article>
+
+        <article class="resource-card">
+          <div class="card-top">
+            <div class="resource-icon">ML</div>
+            <span class="category">Technology</span>
+          </div>
+          <h3>Microsoft Learn</h3>
+          <p>
+            A learning platform with guided modules and practical material
+            across Microsoft technologies, data concepts and technical
+            skills. I can use it to build knowledge step by step.
+          </p>
+          <div class="use"><strong>My focus:</strong> Structured technical learning.</div>
+          <a class="resource-link"
+             href="https://learn.microsoft.com/training/"
+             target="_blank" rel="noopener noreferrer">
+            Visit Microsoft Learn ↗
+          </a>
+        </article>
+
+        <article class="resource-card">
+          <div class="card-top">
+            <div class="resource-icon">ST</div>
+            <span class="category">Statistics</span>
+          </div>
+          <h3>Khan Academy</h3>
+          <p>
+            Explanations, lessons and practice exercises in statistics and
+            probability. These can help reinforce classroom concepts and
+            improve my confidence when interpreting numerical information.
+          </p>
+          <div class="use"><strong>My focus:</strong> Probability, distributions and data interpretation.</div>
+          <a class="resource-link"
+             href="https://www.khanacademy.org/math/statistics-probability"
+             target="_blank" rel="noopener noreferrer">
+            Study statistics ↗
+          </a>
+        </article>
+
+        <article class="resource-card">
+          <div class="card-top">
+            <div class="resource-icon">FN</div>
+            <span class="category">Business finance</span>
+          </div>
+          <h3>OpenStax Finance</h3>
+          <p>
+            Open educational textbooks can provide additional explanations
+            of financial concepts and business decision-making. I can use
+            relevant chapters to support my understanding of finance topics.
+          </p>
+          <div class="use"><strong>My focus:</strong> Connecting financial concepts to business decisions.</div>
+          <a class="resource-link"
+             href="https://openstax.org/subjects/business"
+             target="_blank" rel="noopener noreferrer">
+            Browse business textbooks ↗
+          </a>
+        </article>
+
+        <article class="resource-card">
+          <div class="card-top">
+            <div class="resource-icon">WR</div>
+            <span class="category">Communication</span>
+          </div>
+          <h3>Purdue Online Writing Lab</h3>
+          <p>
+            A writing resource for academic structure, research, citations
+            and professional communication. It can help me communicate
+            ideas clearly and present work in an organised format.
+          </p>
+          <div class="use"><strong>My focus:</strong> Academic writing and responsible referencing.</div>
+          <a class="resource-link"
+             href="https://owl.purdue.edu/"
+             target="_blank" rel="noopener noreferrer">
+            Improve my writing ↗
+          </a>
+        </article>
+
+        <article class="resource-card">
+          <div class="card-top">
+            <div class="resource-icon">IS</div>
+            <span class="category">Statistics text</span>
+          </div>
+          <h3>OpenStax Introductory Statistics</h3>
+          <p>
+            A free textbook that provides more detailed explanations and
+            worked examples. I can revisit a topic after a lecture and
+            practise applying statistical methods.
+          </p>
+          <div class="use"><strong>My focus:</strong> Statistical reasoning and worked examples.</div>
+          <a class="resource-link"
+             href="https://openstax.org/details/books/introductory-statistics-2e"
+             target="_blank" rel="noopener noreferrer">
+            Open the textbook ↗
+          </a>
+        </article>
+
+      </div>
+    </section>
+
+    <section class="study-system" aria-labelledby="system-heading">
+      <div>
+        <div class="eyebrow">My personal method</div>
+        <h2 id="system-heading">Study with intention.</h2>
+        <p class="intro">
+          I want my study sessions to be active rather than passive.
+          Reading alone is not enough; I need to practise, question,
+          apply and review what I learn.
+        </p>
+      </div>
+
+      <div class="steps">
+        <div class="step">
+          <div class="step-number">01</div>
+          <div>
+            <h3>Identify the learning gap</h3>
+            <p>
+              I begin by identifying a topic I do not fully understand
+              and defining what I need to learn.
+            </p>
+          </div>
+        </div>
+
+        <div class="step">
+          <div class="step-number">02</div>
+          <div>
+            <h3>Choose a suitable resource</h3>
+            <p>
+              I select a relevant lesson, textbook chapter or official
+              software guide instead of collecting information without a plan.
+            </p>
+          </div>
+        </div>
+
+        <div class="step">
+          <div class="step-number">03</div>
+          <div>
+            <h3>Practise the concept</h3>
+            <p>
+              I work through an exercise, create a spreadsheet, interpret
+              a data example or explain the idea in my own words.
+            </p>
+          </div>
+        </div>
+
+        <div class="step">
+          <div class="step-number">04</div>
+          <div>
+            <h3>Record what I have learned</h3>
+            <p>
+              I summarise key ideas, note questions and keep track of
+              topics that need further revision.
+            </p>
+          </div>
+        </div>
+
+        <div class="step">
+          <div class="step-number">05</div>
+          <div>
+            <h3>Review and apply</h3>
+            <p>
+              I revisit difficult concepts and look for ways to connect
+              my learning to practical business and data problems.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="weekly-plan" aria-labelledby="weekly-heading">
+      <div class="section-heading">
+        <div>
+          <div class="eyebrow">A flexible study framework</div>
+          <h2 id="weekly-heading">My weekly learning rhythm.</h2>
+        </div>
+        <p>
+          This is a suggested structure that I can adapt around lectures,
+          assignment deadlines, revision and other responsibilities.
+        </p>
+      </div>
+
+      <div class="plan-table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Study focus</th>
+              <th>Activity</th>
+              <th>Intended outcome</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Statistics</td>
+              <td>Review lecture notes and complete practice questions.</td>
+              <td>Improve numerical reasoning and interpretation.</td>
+            </tr>
+            <tr>
+              <td>Computer Technology</td>
+              <td>Practise software functions and document new skills.</td>
+              <td>Build confidence using digital tools.</td>
+            </tr>
+            <tr>
+              <td>Business Finance</td>
+              <td>Review financial concepts and work through examples.</td>
+              <td>Understand how financial information supports decisions.</td>
+            </tr>
+            <tr>
+              <td>Communication</td>
+              <td>Practise structured writing and review referencing.</td>
+              <td>Communicate ideas clearly and professionally.</td>
+            </tr>
+            <tr>
+              <td>Weekly review</td>
+              <td>Summarise progress and identify topics for further study.</td>
+              <td>Develop consistency and independent learning habits.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <aside class="integrity-note">
+      <div class="integrity-symbol">§</div>
+      <div>
+        <h3>Learning with integrity.</h3>
+        <p>
+          I recognise that online resources are tools for understanding,
+          not substitutes for my own learning. When I use external material,
+          I check its credibility, acknowledge sources where required,
+          follow my institution's academic rules and express my understanding
+          in my own words. I also verify that a resource matches the topic
+          and instructions for the task I am completing.
+        </p>
+      </div>
+    </aside>
+
+    <section class="closing-strip">
+      <div class="eyebrow">From learning to leadership</div>
+      <h2>Knowledge should lead to action.</h2>
+      <p>
+        My goal is to keep developing the technical ability, business
+        understanding and professional communication needed to grow into
+        a capable data analyst and future entrepreneur.
+      </p>
+      <a class="button-link" href="professional-vision.html">
+        Continue to My Professional Vision →
+      </a>
+    </section>
+  </main>
+
+  <footer>
+    <span>© 2026 Rethabile Menyatso</span>
+    <span>THE EXECUTIVE EDGE. · Page 08 of 09</span>
+    <a href="index.html">Return to portfolio home ↑</a>
+  </footer>
+</body>
+</html>
