@@ -1,0 +1,829 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Individual Reflection | Rethabile Menyatso</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500;1,600&display=swap" rel="stylesheet">
+
+<style>
+:root {
+    --wine: #541D2B;
+    --dark: #321019;
+    --ivory: #F3EBDD;
+    --paper: #FCF9F3;
+    --ink: #202020;
+    --copper: #B87962;
+    --muted: #756A68;
+    --line: rgba(84,29,43,.18);
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+    background: var(--paper);
+    color: var(--ink);
+    font-family: "DM Sans", sans-serif;
+    line-height: 1.85;
+}
+
+a { color: inherit; text-decoration: none; }
+
+.topbar {
+    padding: 18px 7%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 20px;
+    border-bottom: 1px solid var(--line);
+}
+
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.brand-mark {
+    width: 42px;
+    height: 42px;
+    background: var(--wine);
+    color: var(--ivory);
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+    font: italic 24px "Playfair Display", serif;
+}
+
+.brand strong {
+    display: block;
+    font-size: 11px;
+    letter-spacing: 1.4px;
+    text-transform: uppercase;
+}
+
+.brand small {
+    display: block;
+    color: var(--muted);
+    font-size: 9px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+}
+
+.navigation {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 18px;
+}
+
+.navigation a {
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: .8px;
+    text-transform: uppercase;
+}
+
+.navigation a:hover { color: var(--copper); }
+
+.masthead {
+    padding: 65px 9% 70px;
+    background: var(--ivory);
+    position: relative;
+    overflow: hidden;
+}
+
+.masthead::after {
+    content: "03";
+    position: absolute;
+    right: 5%;
+    bottom: -75px;
+    font: 500 260px "Playfair Display", serif;
+    color: rgba(84,29,43,.055);
+    pointer-events: none;
+}
+
+.kicker {
+    color: var(--wine);
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+}
+
+.masthead h1 {
+    position: relative;
+    z-index: 1;
+    margin: 20px 0;
+    max-width: 850px;
+    font: 500 clamp(48px, 8vw, 94px)/1.03 "Playfair Display", serif;
+    letter-spacing: -3px;
+}
+
+.masthead h1 em { color: var(--wine); }
+
+.masthead-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    flex-wrap: wrap;
+    gap: 25px;
+    position: relative;
+    z-index: 1;
+}
+
+.masthead-bottom p {
+    max-width: 480px;
+    color: var(--muted);
+    font-size: 13px;
+}
+
+.issue {
+    color: var(--wine);
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+.editorial {
+    max-width: 1100px;
+    margin: 75px auto;
+    padding: 0 30px;
+    display: grid;
+    grid-template-columns: 210px minmax(0, 1fr);
+    gap: 75px;
+}
+
+.contents {
+    align-self: start;
+    position: sticky;
+    top: 25px;
+    padding-top: 8px;
+}
+
+.contents-label {
+    padding-bottom: 15px;
+    margin-bottom: 13px;
+    border-bottom: 2px solid var(--wine);
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+.contents a {
+    display: block;
+    padding: 10px 0;
+    border-bottom: 1px solid var(--line);
+    color: var(--muted);
+    font-size: 11px;
+    transition: color .2s;
+}
+
+.contents a:hover { color: var(--wine); }
+
+.contents-note {
+    margin-top: 28px;
+    padding: 20px;
+    background: var(--ivory);
+    font: italic 17px/1.6 "Playfair Display", serif;
+    color: var(--wine);
+}
+
+.article { min-width: 0; }
+
+.article-opening {
+    padding-bottom: 38px;
+    border-bottom: 1px solid var(--line);
+}
+
+.article-number {
+    color: var(--copper);
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+}
+
+.article-opening h2 {
+    margin: 15px 0 25px;
+    font: 500 clamp(31px, 4vw, 46px)/1.25 "Playfair Display", serif;
+}
+
+.article-opening p,
+.reflection-section > p {
+    margin-bottom: 19px;
+    color: #554C49;
+    font-size: 13px;
+    line-height: 2.05;
+}
+
+.dropcap::first-letter {
+    float: left;
+    font: 500 74px/.85 "Playfair Display", serif;
+    color: var(--wine);
+    padding: 8px 12px 0 0;
+}
+
+.pullquote {
+    margin: 38px 0;
+    padding: 30px 0 30px 30px;
+    border-left: 3px solid var(--copper);
+}
+
+.pullquote blockquote {
+    font: italic 500 clamp(24px, 3.2vw, 36px)/1.45 "Playfair Display", serif;
+    color: var(--wine);
+}
+
+.pullquote cite {
+    display: block;
+    margin-top: 17px;
+    color: var(--muted);
+    font: 800 9px "DM Sans", sans-serif;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+.reflection-section {
+    padding: 40px 0;
+    border-bottom: 1px solid var(--line);
+    scroll-margin-top: 25px;
+}
+
+.section-topline {
+    display: flex;
+    align-items: center;
+    gap: 13px;
+    margin-bottom: 20px;
+}
+
+.section-index {
+    width: 39px;
+    height: 39px;
+    display: grid;
+    place-items: center;
+    background: var(--wine);
+    color: var(--ivory);
+    font: italic 17px "Playfair Display", serif;
+}
+
+.section-topline h3 {
+    font: 500 27px "Playfair Display", serif;
+}
+
+.reflection-section h4 {
+    margin: 25px 0 8px;
+    font-size: 11px;
+    color: var(--wine);
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+.learning-card {
+    margin: 25px 0;
+    padding: 25px;
+    background: var(--ivory);
+    border-top: 2px solid var(--copper);
+}
+
+.learning-card strong {
+    display: block;
+    margin-bottom: 7px;
+    font: 500 21px "Playfair Display", serif;
+}
+
+.learning-card p {
+    color: var(--muted);
+    font-size: 12px;
+    line-height: 1.9;
+}
+
+.growth-list {
+    margin: 25px 0;
+    border-top: 1px solid var(--line);
+}
+
+.growth-item {
+    display: grid;
+    grid-template-columns: 45px 1fr;
+    gap: 16px;
+    padding: 18px 0;
+    border-bottom: 1px solid var(--line);
+}
+
+.growth-item span {
+    color: var(--copper);
+    font: 500 24px "Playfair Display", serif;
+}
+
+.growth-item h4 {
+    margin: 0 0 5px;
+}
+
+.growth-item p {
+    color: var(--muted);
+    font-size: 12px;
+    line-height: 1.9;
+}
+
+.conclusion {
+    margin-top: 40px;
+    padding: 38px;
+    background: var(--wine);
+    color: var(--ivory);
+}
+
+.conclusion .kicker { color: #D7A88E; }
+
+.conclusion h3 {
+    margin: 15px 0;
+    font: 500 33px/1.25 "Playfair Display", serif;
+}
+
+.conclusion p {
+    color: #E4D4D0;
+    font-size: 12px;
+    line-height: 2;
+}
+
+.reflection-signoff {
+    margin-top: 25px;
+    padding-top: 18px;
+    border-top: 1px solid rgba(243,235,221,.25);
+    font-size: 10px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+.page-controls {
+    max-width: 1100px;
+    margin: 0 auto 70px;
+    padding: 0 30px;
+    display: flex;
+    justify-content: space-between;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.page-controls a {
+    display: inline-block;
+    padding: 13px 18px;
+    border: 1px solid var(--wine);
+    color: var(--wine);
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+.page-controls a:hover {
+    background: var(--wine);
+    color: white;
+}
+
+footer {
+    background: var(--dark);
+    color: var(--ivory);
+    padding: 27px 7%;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 15px;
+    font-size: 10px;
+}
+
+footer a { color: #D7A88E; }
+
+@media (max-width: 800px) {
+    .editorial {
+        grid-template-columns: 1fr;
+        gap: 35px;
+        margin: 45px auto;
+    }
+
+    .contents {
+        position: static;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 0 20px;
+    }
+
+    .contents-label {
+        grid-column: 1/-1;
+    }
+
+    .contents-note {
+        grid-column: 1/-1;
+    }
+}
+
+@media (max-width: 520px) {
+    .topbar { padding: 16px 5%; }
+    .navigation { gap: 11px; }
+    .navigation a { font-size: 9px; }
+    .masthead { padding: 48px 7%; }
+    .masthead h1 { letter-spacing: -1.5px; }
+    .editorial { padding: 0 20px; }
+    .contents { grid-template-columns: 1fr; }
+    .contents-note { grid-column: auto; }
+    .section-topline h3 { font-size: 23px; }
+    .conclusion { padding: 25px; }
+    .page-controls { padding: 0 20px; }
+}
+
+@media print {
+    @page { margin: 16mm; }
+    .topbar, .contents, .page-controls, footer { display: none; }
+    .masthead { padding: 20px 0; }
+    .masthead::after { display: none; }
+    .editorial {
+        display: block;
+        margin: 20px 0;
+        padding: 0;
+    }
+    .reflection-section { break-inside: avoid; }
+    .conclusion, .learning-card {
+        print-color-adjust: exact;
+        -webkit-print-color-adjust: exact;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header class="topbar">
+    <a class="brand" href="index.html">
+        <span class="brand-mark">R</span>
+        <span>
+            <strong>Rethabile Menyatso</strong>
+            <small>The Executive Edge</small>
+        </span>
+    </a>
+
+    <nav class="navigation" aria-label="Main navigation">
+        <a href="index.html">Home</a>
+        <a href="cv.html">CV</a>
+        <a href="group-reflection.html">Group Reflection</a>
+        <a href="skills-projects.html">Skills & Projects</a>
+    </nav>
+</header>
+
+<section class="masthead">
+    <div class="kicker">The learning journal · Personal development</div>
+
+    <h1>
+        Learning to become.<br>
+        <em>One experience at a time.</em>
+    </h1>
+
+    <div class="masthead-bottom">
+        <p>
+            A personal reflection on my academic journey, the mindset I am
+            developing, the challenges I may encounter and the professional
+            I hope to become.
+        </p>
+        <div class="issue">Reflection 01 / 2026</div>
+    </div>
+</section>
+
+<main class="editorial">
+
+    <aside class="contents">
+        <div class="contents-label">Inside this reflection</div>
+
+        <a href="#beginning">01. My beginning</a>
+        <a href="#learning">02. My learning journey</a>
+        <a href="#challenges">03. Challenges & growth</a>
+        <a href="#strengths">04. My personal strengths</a>
+        <a href="#application">05. Applying what I learn</a>
+        <a href="#future">06. Looking forward</a>
+
+        <div class="contents-note">
+            “Growth begins when I become willing to question what I know
+            and explore what I have yet to understand.”
+        </div>
+    </aside>
+
+    <article class="article">
+
+        <section class="article-opening" id="beginning">
+            <div class="article-number">01 / The beginning</div>
+
+            <h2>Understanding myself as a student and a future professional.</h2>
+
+            <p class="dropcap">
+                My journey in Business Intelligence and Data Analytics
+                represents an important step towards the future I want to
+                build. As a first-year student at BAC, I am developing the
+                academic foundation that I hope to use in a career where
+                technology, business and analytical thinking meet.
+            </p>
+
+            <p>
+                When I reflect on my decision to pursue this field, I recognise
+                that I am interested in more than working with computers or
+                numbers. I want to understand how information can explain
+                business situations, reveal patterns and support better
+                decisions. This interest encourages me to approach my studies
+                with curiosity and an open mind.
+            </p>
+
+            <p>
+                I also understand that being a university student involves
+                more than attending classes and completing assignments.
+                It requires responsibility, consistency, independent thinking
+                and the ability to learn from feedback. I am still developing
+                these qualities, and I see my first year as an opportunity
+                to understand myself better and establish positive habits.
+            </p>
+        </section>
+
+        <div class="pullquote">
+            <blockquote>
+                “I do not need to know everything today.
+                I need to remain willing to learn, improve and try again.”
+            </blockquote>
+            <cite>My developing mindset</cite>
+        </div>
+
+        <section class="reflection-section" id="learning">
+            <div class="section-topline">
+                <span class="section-index">02</span>
+                <h3>My learning journey</h3>
+            </div>
+
+            <p>
+                Studying Business Intelligence and Data Analytics gives me
+                the opportunity to explore different areas of knowledge.
+                Subjects such as Computer Technology, Fundamentals of
+                Business Finance and Statistical Foundations for Data Analysis
+                can help me understand both the technical and business sides
+                of decision-making.
+            </p>
+
+            <p>
+                I am learning to appreciate that these subjects are connected.
+                Statistical thinking can help me interpret information,
+                computer technology can help me understand the systems used
+                to process it, and business finance can help me consider
+                the financial context in which decisions are made.
+            </p>
+
+            <p>
+                Communication and Study Skills are equally important because
+                understanding information is only one part of the process.
+                I must also be able to explain ideas clearly, organise my work
+                and communicate respectfully with classmates and lecturers.
+            </p>
+
+            <div class="learning-card">
+                <strong>What I want to develop</strong>
+                <p>
+                    I want to become more confident in using analytical tools,
+                    interpreting information, asking meaningful questions
+                    and explaining my reasoning. I also want to build a
+                    consistent study routine that helps me balance my
+                    academic responsibilities with personal development.
+                </p>
+            </div>
+        </section>
+
+        <section class="reflection-section" id="challenges">
+            <div class="section-topline">
+                <span class="section-index">03</span>
+                <h3>Challenges and personal growth</h3>
+            </div>
+
+            <p>
+                I recognise that a new academic environment can require
+                adjustment. University-level work may demand more independent
+                study, careful time management and deeper understanding
+                than simply memorising information. Developing confidence
+                with unfamiliar technical concepts is also an area in
+                which I expect to keep learning.
+            </p>
+
+            <p>
+                Rather than viewing difficulty as a reason to give up,
+                I want to treat it as a signal to examine my approach.
+                If I struggle to understand a topic, I can break it into
+                smaller parts, revisit my notes, practise examples, use
+                reliable learning resources and seek clarification when
+                necessary.
+            </p>
+
+            <p>
+                I also understand that personal growth requires honesty.
+                I need to recognise when I have not prepared sufficiently,
+                when I need support and when my current study methods
+                are not producing the results I want. Taking responsibility
+                for these areas will help me become a more independent learner.
+            </p>
+
+            <div class="growth-list">
+                <div class="growth-item">
+                    <span>01</span>
+                    <div>
+                        <h4>Time management</h4>
+                        <p>
+                            I want to plan my assignments and revision earlier
+                            so that I can work consistently rather than
+                            depending on last-minute preparation.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="growth-item">
+                    <span>02</span>
+                    <div>
+                        <h4>Confidence with technology</h4>
+                        <p>
+                            I intend to strengthen my practical skills through
+                            regular exercises and by revisiting concepts
+                            I find difficult.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="growth-item">
+                    <span>03</span>
+                    <div>
+                        <h4>Using feedback constructively</h4>
+                        <p>
+                            I want to view feedback as an opportunity to
+                            identify gaps, correct mistakes and improve
+                            the quality of my future work.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="reflection-section" id="strengths">
+            <div class="section-topline">
+                <span class="section-index">04</span>
+                <h3>Recognising my strengths</h3>
+            </div>
+
+            <p>
+                I consider myself collaborative, adaptable and driven.
+                These qualities can support my academic development because
+                learning often involves working with other people, adjusting
+                to new expectations and continuing even when a task requires
+                extra effort.
+            </p>
+
+            <p>
+                Creativity is another strength I value. My interests in
+                visual arts and crocheting involve exploring ideas, paying
+                attention to details and turning a concept into something
+                tangible. Puzzle-solving also encourages me to examine
+                problems carefully and consider different possible solutions.
+            </p>
+
+            <p>
+                Although these interests are different from formal data
+                analysis, I believe they can complement my studies. They
+                remind me that problem-solving requires patience, curiosity
+                and a willingness to experiment with approaches.
+            </p>
+
+            <p>
+                At the same time, I know that having a strength does not mean
+                I have nothing left to improve. I want to keep developing
+                my communication, technical confidence and ability to explain
+                analytical ideas in a clear and organised way.
+            </p>
+        </section>
+
+        <section class="reflection-section" id="application">
+            <div class="section-topline">
+                <span class="section-index">05</span>
+                <h3>Connecting learning to practice</h3>
+            </div>
+
+            <p>
+                One of my main reasons for studying this programme is to
+                understand how businesses use data to make decisions.
+                I want to move beyond learning definitions and develop
+                the ability to apply concepts to practical situations.
+            </p>
+
+            <p>
+                For example, spreadsheet exercises can help me practise
+                organising information, checking entries and interpreting
+                results. Learning about databases can introduce me to
+                structured information management, while statistical
+                foundations can help me understand how evidence is used
+                to identify patterns and answer questions.
+            </p>
+
+            <p>
+                I also want to become more comfortable explaining what
+                information means rather than simply presenting figures.
+                In a business environment, analysis should help people
+                understand a situation and consider possible actions.
+                Developing this perspective is important to my aspiration
+                to become a data analyst.
+            </p>
+
+            <div class="learning-card">
+                <strong>My practical commitment</strong>
+                <p>
+                    I intend to strengthen my knowledge through practice,
+                    coursework, research and small projects that match
+                    the skills I am currently learning. As my abilities
+                    develop, I want to build a portfolio that demonstrates
+                    my progress honestly and clearly.
+                </p>
+            </div>
+        </section>
+
+        <section class="reflection-section" id="future">
+            <div class="section-topline">
+                <span class="section-index">06</span>
+                <h3>Looking towards my future</h3>
+            </div>
+
+            <p>
+                My long-term ambition is to become a successful data analyst
+                and entrepreneur. I want to develop the technical knowledge,
+                business awareness and professional judgement needed to
+                contribute meaningfully in a workplace and, eventually,
+                explore opportunities of my own.
+            </p>
+
+            <p>
+                Reaching these goals will require patience and continued
+                development. I will need to keep learning new tools, adapt
+                to changing technology, communicate effectively and
+                understand the needs of the people and organisations
+                I hope to work with.
+            </p>
+
+            <p>
+                As I continue my studies, I want to measure my progress
+                not only through academic results but also through the
+                quality of my work, my willingness to learn from mistakes
+                and my ability to work responsibly with others.
+            </p>
+
+            <p>
+                This reflection reminds me that professional development
+                is an ongoing process. I am at the beginning of my journey,
+                but I can make meaningful progress by remaining curious,
+                disciplined and open to improvement.
+            </p>
+        </section>
+
+        <section class="conclusion">
+            <div class="kicker">Final thoughts / My commitment</div>
+
+            <h3>I am becoming the professional I hope to be.</h3>
+
+            <p>
+                My individual learning journey is about building a strong
+                foundation, recognising my strengths and taking responsibility
+                for the areas I need to improve. I want to approach my
+                education with purpose, use feedback constructively and
+                seek opportunities to apply what I learn.
+            </p>
+
+            <p style="margin-top:15px;">
+                I know that success will not happen through ambition alone.
+                It will require consistent effort, practical experience
+                and a willingness to keep growing. My commitment is to
+                take those steps seriously as I work towards a future
+                in data analytics and entrepreneurship.
+            </p>
+
+            <div class="reflection-signoff">
+                Rethabile Menyatso · Business Intelligence & Data Analytics
+            </div>
+        </section>
+
+    </article>
+</main>
+
+<div class="page-controls">
+    <a href="cv.html">← Previous: CV</a>
+    <a href="index.html">Return to Home</a>
+    <a href="group-reflection.html">Next: Group Reflection →</a>
+</div>
+
+<footer>
+    <span>© 2026 Rethabile Menyatso</span>
+    <span>Personal growth · Learning · Reflection</span>
+    <a href="index.html">The Executive Edge ↗</a>
+</footer>
+
+</body>
+</html>
