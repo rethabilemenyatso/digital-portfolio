@@ -1,0 +1,752 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Rethabile Menyatso's professional vision, career goals and commitment to lifelong learning.">
+  <title>Professional Vision | Rethabile Menyatso</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --oxblood: #541D2B;
+      --deep: #321019;
+      --ivory: #F3EBDD;
+      --paper: #FFFCF7;
+      --onyx: #202020;
+      --silver: #B9B7B4;
+      --copper: #B87962;
+      --muted: #756C67;
+      --line: #E4D9CE;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background: var(--ivory);
+      color: var(--onyx);
+      font-family: "DM Sans", sans-serif;
+      line-height: 1.75;
+    }
+
+    a {
+      color: inherit;
+    }
+
+    h1, h2, h3 {
+      font-family: "Playfair Display", serif;
+      font-weight: 600;
+      line-height: 1.2;
+    }
+
+    .topbar {
+      background: var(--deep);
+      color: var(--ivory);
+      padding: 18px 7%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 14px;
+    }
+
+    .brand {
+      font-family: "Playfair Display", serif;
+      font-size: 1.15rem;
+      letter-spacing: 1.4px;
+    }
+
+    .brand span {
+      color: var(--copper);
+    }
+
+    .edition {
+      color: #D7C9C4;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      font-size: 0.68rem;
+    }
+
+    .navigation {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 17px;
+      padding: 14px 7%;
+      background: var(--paper);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .navigation a {
+      text-decoration: none;
+      font-size: 0.76rem;
+      font-weight: 700;
+      color: #5D5550;
+    }
+
+    .navigation a:hover {
+      color: var(--oxblood);
+    }
+
+    .hero {
+      background: var(--oxblood);
+      color: var(--ivory);
+      min-height: 560px;
+      display: grid;
+      grid-template-columns: 1.35fr 0.65fr;
+      align-items: center;
+      gap: 35px;
+      padding: 75px 9%;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      width: 380px;
+      height: 380px;
+      border: 1px solid rgba(243,235,221,0.12);
+      border-radius: 50%;
+      right: -90px;
+      bottom: -180px;
+    }
+
+    .hero-copy, .vision-mark {
+      position: relative;
+      z-index: 1;
+    }
+
+    .eyebrow {
+      color: var(--copper);
+      text-transform: uppercase;
+      letter-spacing: 3px;
+      font-size: 0.7rem;
+      font-weight: 700;
+      margin-bottom: 17px;
+    }
+
+    .hero h1 {
+      font-size: clamp(3rem, 6.8vw, 6.1rem);
+      max-width: 780px;
+      letter-spacing: -1.8px;
+      margin-bottom: 24px;
+    }
+
+    .hero h1 em {
+      color: #D6A58F;
+      font-weight: 500;
+    }
+
+    .hero-copy p {
+      max-width: 610px;
+      color: #E8DAD4;
+      font-size: 0.96rem;
+    }
+
+    .vision-mark {
+      border: 1px solid rgba(243,235,221,0.3);
+      padding: 35px 25px;
+      text-align: center;
+      transform: rotate(2deg);
+      background: rgba(50,16,25,0.25);
+    }
+
+    .vision-mark .monogram {
+      font-family: "Playfair Display", serif;
+      font-size: 5.4rem;
+      line-height: 1.15;
+      color: var(--ivory);
+    }
+
+    .vision-mark .rule {
+      width: 55px;
+      height: 2px;
+      background: var(--copper);
+      margin: 17px auto;
+    }
+
+    .vision-mark p {
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      font-size: 0.65rem;
+      color: #D8C8C1;
+    }
+
+    main {
+      max-width: 1200px;
+      margin: auto;
+      padding: 65px 6%;
+    }
+
+    .manifesto {
+      display: grid;
+      grid-template-columns: 0.8fr 1.2fr;
+      gap: 55px;
+      align-items: start;
+      padding-bottom: 65px;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .manifesto h2 {
+      font-size: clamp(2.1rem, 4vw, 3.5rem);
+    }
+
+    .manifesto-text p {
+      font-size: 0.94rem;
+      color: #554E49;
+      margin-bottom: 18px;
+    }
+
+    .manifesto-text p:last-child {
+      margin-bottom: 0;
+    }
+
+    .signature-quote {
+      margin: 35px 0 0;
+      padding: 23px 26px;
+      border-left: 4px solid var(--copper);
+      background: var(--paper);
+      font-family: "Playfair Display", serif;
+      font-size: 1.4rem;
+      line-height: 1.5;
+      color: var(--oxblood);
+    }
+
+    .section-intro {
+      margin-bottom: 30px;
+    }
+
+    .section-intro h2 {
+      font-size: clamp(2rem, 4vw, 3rem);
+      margin-bottom: 10px;
+    }
+
+    .section-intro p {
+      color: var(--muted);
+      max-width: 690px;
+      font-size: 0.88rem;
+    }
+
+    .roadmap {
+      padding: 65px 0;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .roadmap-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 17px;
+    }
+
+    .roadmap-card {
+      background: var(--paper);
+      border: 1px solid var(--line);
+      padding: 27px 23px;
+      min-height: 290px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .roadmap-card::after {
+      content: attr(data-number);
+      position: absolute;
+      right: 12px;
+      bottom: -34px;
+      font-family: "Playfair Display", serif;
+      font-size: 9rem;
+      line-height: 1;
+      color: rgba(84,29,43,0.045);
+      pointer-events: none;
+    }
+
+    .roadmap-card > * {
+      position: relative;
+      z-index: 1;
+    }
+
+    .phase {
+      color: var(--copper);
+      font-size: 0.68rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      margin-bottom: 16px;
+    }
+
+    .roadmap-card h3 {
+      color: var(--oxblood);
+      font-size: 1.5rem;
+      margin-bottom: 13px;
+    }
+
+    .roadmap-card p {
+      color: #655C56;
+      font-size: 0.83rem;
+    }
+
+    .goal-label {
+      display: inline-block;
+      margin-top: 19px;
+      border-top: 1px solid var(--line);
+      padding-top: 11px;
+      font-size: 0.73rem;
+      font-weight: 700;
+      color: var(--onyx);
+    }
+
+    .principles {
+      padding: 65px 0;
+      display: grid;
+      grid-template-columns: 0.8fr 1.2fr;
+      gap: 55px;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .principles-heading h2 {
+      font-size: clamp(2.1rem, 4vw, 3.2rem);
+      margin-bottom: 17px;
+    }
+
+    .principles-heading p {
+      color: var(--muted);
+      font-size: 0.87rem;
+    }
+
+    .principle-list {
+      display: grid;
+      gap: 0;
+    }
+
+    .principle {
+      display: grid;
+      grid-template-columns: 45px 1fr;
+      gap: 16px;
+      padding: 17px 0;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .principle:last-child {
+      border-bottom: none;
+    }
+
+    .principle-number {
+      color: var(--copper);
+      font-family: "Playfair Display", serif;
+      font-size: 1.5rem;
+    }
+
+    .principle h3 {
+      font-family: "DM Sans", sans-serif;
+      font-size: 0.96rem;
+      margin-bottom: 5px;
+    }
+
+    .principle p {
+      color: #6D645E;
+      font-size: 0.81rem;
+    }
+
+    .closing {
+      background: var(--onyx);
+      color: var(--ivory);
+      margin-top: 65px;
+      padding: 58px 8%;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .closing::before,
+    .closing::after {
+      content: "";
+      position: absolute;
+      width: 150px;
+      height: 150px;
+      border: 1px solid rgba(184,121,98,0.3);
+      border-radius: 50%;
+    }
+
+    .closing::before {
+      top: -90px;
+      left: -50px;
+    }
+
+    .closing::after {
+      bottom: -100px;
+      right: -45px;
+    }
+
+    .closing .eyebrow,
+    .closing h2,
+    .closing p,
+    .closing a {
+      position: relative;
+      z-index: 1;
+    }
+
+    .closing h2 {
+      font-size: clamp(2.3rem, 5vw, 4rem);
+      max-width: 800px;
+      margin: 0 auto 20px;
+    }
+
+    .closing p {
+      color: #D0C7C0;
+      max-width: 650px;
+      margin: 0 auto 28px;
+      font-size: 0.89rem;
+    }
+
+    .closing a {
+      display: inline-block;
+      background: var(--copper);
+      color: var(--deep);
+      padding: 13px 23px;
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 0.8rem;
+    }
+
+    .closing a:hover {
+      background: var(--ivory);
+    }
+
+    .contact-band {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 12px 27px;
+      margin-top: 30px;
+      color: #D7CCC5;
+      font-size: 0.76rem;
+    }
+
+    .contact-band a {
+      display: inline;
+      background: none;
+      color: #D7CCC5;
+      padding: 0;
+      text-decoration: underline;
+      font-weight: 400;
+    }
+
+    footer {
+      background: var(--deep);
+      color: #D5C8C1;
+      padding: 26px 7%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 15px;
+      flex-wrap: wrap;
+      font-size: 0.72rem;
+    }
+
+    footer a {
+      color: var(--ivory);
+      text-decoration: none;
+    }
+
+    @media (max-width: 850px) {
+      .hero {
+        grid-template-columns: 1fr;
+        padding: 60px 7%;
+      }
+
+      .vision-mark {
+        max-width: 270px;
+      }
+
+      .manifesto,
+      .principles {
+        grid-template-columns: 1fr;
+        gap: 25px;
+      }
+
+      .roadmap-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .roadmap-card {
+        min-height: auto;
+      }
+    }
+
+    @media (max-width: 520px) {
+      main {
+        padding: 40px 5%;
+      }
+
+      .hero h1 {
+        font-size: 3.1rem;
+      }
+
+      .closing {
+        padding: 42px 22px;
+      }
+
+      .signature-quote {
+        font-size: 1.2rem;
+      }
+    }
+
+    @media print {
+      body {
+        background: white;
+      }
+
+      .topbar, .navigation, .hero, .closing, footer {
+        print-color-adjust: exact;
+        -webkit-print-color-adjust: exact;
+      }
+
+      .roadmap-card {
+        break-inside: avoid;
+      }
+
+      .closing a {
+        display: none;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header class="topbar">
+    <div class="brand">THE EXECUTIVE <span>EDGE.</span></div>
+    <div class="edition">Portfolio finale · 2026</div>
+  </header>
+
+  <nav class="navigation" aria-label="Portfolio navigation">
+    <a href="index.html">01 Home</a>
+    <a href="cv.html">02 CV</a>
+    <a href="individual-reflection.html">03 Reflection</a>
+    <a href="group-reflection.html">04 Group Work</a>
+    <a href="skills-projects.html">05 Skills</a>
+    <a href="application-letter.html">06 Letter</a>
+    <a href="email-template.html">07 Email</a>
+    <a href="study-resources.html">08 Resources</a>
+    <a href="professional-vision.html" aria-current="page">09 Vision</a>
+  </nav>
+
+  <section class="hero">
+    <div class="hero-copy">
+      <div class="eyebrow">Chapter 09 · The future I am building</div>
+      <h1>Ambition with<br><em>intention.</em></h1>
+      <p>
+        I see my future as an opportunity to bring together analytical
+        thinking, business understanding and creativity. My journey is
+        still developing, but I am committed to becoming someone who can
+        understand information, solve problems and turn ideas into meaningful
+        action.
+      </p>
+    </div>
+
+    <div class="vision-mark">
+      <div class="monogram">RM</div>
+      <div class="rule"></div>
+      <p>Curious mind.<br>Purposeful future.</p>
+    </div>
+  </section>
+
+  <main>
+    <section class="manifesto">
+      <div>
+        <div class="eyebrow">My professional philosophy</div>
+        <h2>Building a career that combines insight and impact.</h2>
+      </div>
+
+      <div class="manifesto-text">
+        <p>
+          As a Business Intelligence and Data Analytics student, I am
+          interested in how information can help people and organisations
+          make better decisions. I want to develop the ability to look beyond
+          numbers, recognise patterns, ask meaningful questions and explain
+          what the findings could mean in a real business environment.
+        </p>
+
+        <p>
+          I also recognise that professional growth involves more than
+          technical knowledge. Communication, collaboration, adaptability,
+          creativity and integrity are important qualities that I want to
+          continue strengthening throughout my studies and career.
+        </p>
+
+        <p>
+          My ambition is to become a capable data analyst and, in time,
+          build my entrepreneurial potential. I understand that these goals
+          require patience, practice, responsibility and a willingness to
+          keep learning. Rather than expecting to know everything now, I
+          want to approach each new experience as an opportunity to improve.
+        </p>
+
+        <div class="signature-quote">
+          “I want to turn what I learn into what I can contribute.”
+        </div>
+      </div>
+    </section>
+
+    <section class="roadmap">
+      <div class="section-intro">
+        <div class="eyebrow">The direction of my journey</div>
+        <h2>From student to professional.</h2>
+        <p>
+          My goals are organised into three broad phases. They are a guide
+          for my development, not a rigid timeline; I will adjust them as
+          I gain experience and discover new opportunities.
+        </p>
+      </div>
+
+      <div class="roadmap-grid">
+        <article class="roadmap-card" data-number="1">
+          <div class="phase">Phase 01 · Foundation</div>
+          <h3>Learn with purpose.</h3>
+          <p>
+            My immediate priority is to build a strong academic foundation.
+            I want to improve my understanding of statistics, finance,
+            computer technology and communication while developing practical
+            confidence in Excel, databases and other relevant digital tools.
+          </p>
+          <div class="goal-label">Focus: Knowledge and consistency</div>
+        </article>
+
+        <article class="roadmap-card" data-number="2">
+          <div class="phase">Phase 02 · Application</div>
+          <h3>Turn knowledge into skill.</h3>
+          <p>
+            As I progress, I aim to seek suitable practical learning
+            opportunities, work on data-related projects and learn from
+            experienced people. I want to build evidence of my abilities
+            through projects, feedback and continuous practice.
+          </p>
+          <div class="goal-label">Focus: Experience and capability</div>
+        </article>
+
+        <article class="roadmap-card" data-number="3">
+          <div class="phase">Phase 03 · Growth</div>
+          <h3>Create meaningful impact.</h3>
+          <p>
+            My longer-term ambition is to establish myself as a data analyst
+            and explore entrepreneurship. I would like to use analytical
+            thinking and business knowledge to identify problems, support
+            informed decisions and develop useful solutions.
+          </p>
+          <div class="goal-label">Focus: Contribution and independence</div>
+        </article>
+      </div>
+    </section>
+
+    <section class="principles">
+      <div class="principles-heading">
+        <div class="eyebrow">The standards I want to uphold</div>
+        <h2>My professional compass.</h2>
+        <p>
+          These are the principles I want to carry into my education,
+          workplace experiences and future professional relationships.
+        </p>
+      </div>
+
+      <div class="principle-list">
+        <article class="principle">
+          <div class="principle-number">01</div>
+          <div>
+            <h3>Curiosity</h3>
+            <p>
+              I want to ask thoughtful questions, explore unfamiliar ideas
+              and understand the reasons behind the information I encounter.
+            </p>
+          </div>
+        </article>
+
+        <article class="principle">
+          <div class="principle-number">02</div>
+          <div>
+            <h3>Integrity</h3>
+            <p>
+              I aim to be honest about my work, respect confidentiality,
+              acknowledge other people's contributions and use information
+              responsibly.
+            </p>
+          </div>
+        </article>
+
+        <article class="principle">
+          <div class="principle-number">03</div>
+          <div>
+            <h3>Collaboration</h3>
+            <p>
+              I want to listen to different perspectives, contribute
+              constructively to group efforts and recognise the value of
+              shared knowledge.
+            </p>
+          </div>
+        </article>
+
+        <article class="principle">
+          <div class="principle-number">04</div>
+          <div>
+            <h3>Adaptability</h3>
+            <p>
+              I aim to respond positively to feedback, learn from challenges
+              and remain willing to develop new skills as technology and
+              business needs change.
+            </p>
+          </div>
+        </article>
+
+        <article class="principle">
+          <div class="principle-number">05</div>
+          <div>
+            <h3>Accountability</h3>
+            <p>
+              I want to take responsibility for my decisions, manage my
+              commitments carefully and recognise areas where I still need
+              to improve.
+            </p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="closing">
+      <div class="eyebrow">The end of this portfolio · The beginning of a journey</div>
+      <h2>I am not finished growing. I am ready to begin.</h2>
+      <p>
+        This portfolio represents my current interests, developing abilities
+        and professional aspirations. I know that growth takes time, and I
+        intend to keep learning, practising and reflecting as I move towards
+        the future I want to create.
+      </p>
+
+      <a href="index.html">Return to the beginning ↗</a>
+
+      <div class="contact-band">
+        <span>Rethabile Menyatso</span>
+        <span>Gaborone, Botswana</span>
+        <a href="mailto:rethabilemenyatso520@gmail.com">
+          rethabilemenyatso520@gmail.com
+        </a>
+        <a href="tel:+26771226236">+267 71 226 236</a>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <span>© 2026 Rethabile Menyatso</span>
+    <span>THE EXECUTIVE EDGE. · Page 09 of 09</span>
+    <a href="index.html">Portfolio home ↑</a>
+  </footer>
+</body>
+</html>
